@@ -1,0 +1,17 @@
+.ui-title {
+  font-size: 36px;
+  margin: 20px 0 15px;
+}
+
+@media (max-width: 767px) {
+  .ui-title {
+    font-size: 29px;
+  }
+}
+
+.btn-groups {
+  .v-btn {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}

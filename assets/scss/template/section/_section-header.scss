@@ -1,0 +1,51 @@
+.navbar-light {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        color: #8d97ad;
+        opacity: 1;
+        &.nuxt-link-exact-active {
+          color: $primary;
+        }
+      }
+      &:hover {
+        .nav-link {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header1,
+  .header2 {
+    .navigation {
+      display: none;
+    }
+    .navbar-nav {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 100%;
+      flex-direction: column;
+      .nav-item .nav-link {
+        line-height: 55px !important;
+      }
+    }
+  }
+  .header1 {
+    z-index: 9 !important;
+    .v-toolbar__content {
+      z-index: 1;
+    }
+    .navbar-nav {
+      background-color: $light;
+    }
+  }
+  .header2 {
+    .navbar-nav {
+      background-color: $dark;
+    }
+  }
+}

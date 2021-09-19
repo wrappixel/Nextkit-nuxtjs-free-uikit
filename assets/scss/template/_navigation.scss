@@ -1,0 +1,61 @@
+.v-application .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  .nav-item {
+    transition: 0.2s ease-in;
+    position: relative;
+
+    .nav-link {
+      text-decoration: none;
+      line-height: $nav-link-height;
+      padding: $nav-link-padding;
+      font-size: $nav-link-font-size;
+      color: $nav-link-font-color;
+      font-family: $nav-link-font-family;
+      opacity: 0.5;
+      font-size: 16px;
+    }
+    &:hover,
+    &.active {
+      > .nav-link {
+        opacity: 1;
+      }
+    }
+    > .nav-link.nuxt-link-exact-active {
+      opacity: 1;
+    }
+  }
+}
+.app-header .v-toolbar__content {
+  padding: 0px 16px;
+}
+
+.v-application .link {
+  text-decoration: none;
+  color: $material-font-light-theme;
+  &:hover {
+    color: $primary;
+  }
+}
+.mob-navigation {
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+.v-application--is-ltr
+  .v-list-group--no-action
+  > .v-list-group__items
+  > .v-list-item.mobile-nav-sub {
+  padding-left: 30px;
+}
+
+.btn-download {
+  margin: 10px 0 10px 10px;
+  background-color: $light !important;
+  border-color: $light !important;
+  &.v-btn--active::before {
+    opacity: 0;
+  }
+}

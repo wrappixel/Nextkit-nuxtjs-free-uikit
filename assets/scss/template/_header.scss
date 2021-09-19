@@ -1,0 +1,79 @@
+.app-header {
+  &.v-sheet {
+    background-color: transparent !important;
+    height: 85px !important;
+    .v-toolbar__content {
+      height: 85px !important;
+    }
+  }
+  .navbar-nav {
+    align-items: center;
+  }
+}
+.common-links {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  li {
+    list-style: none;
+    a {
+      transition: 0.1s ease-in;
+    }
+    &:hover a {
+      padding-left: 5px;
+    }
+  }
+  &.three-part li {
+    width: 33%;
+    display: inline-block;
+  }
+}
+@media (max-width: 767px) {
+  .app-header {
+    .navigation {
+      display: none;
+    }
+    .navbar-nav {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 100%;
+      background-color: #607df9;
+      flex-direction: column !important;
+      box-shadow: 0px 15px 30px rgb(0 0 0 / 12%);
+      .nav-item {
+        text-align: center;
+        .nav-link {
+          line-height: 55px !important;
+        }
+      }
+    }
+  }
+  .common-links {
+    &.three-part li {
+      width: 50%;
+      a {
+        font-size: 13px;
+      }
+    }
+  }
+  .px-sm-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .mob-imagesetter {
+    background-size: unset;
+    background-position: unset !important;
+    margin-top: 29px;
+    // background-image: url(~assets/images/banner-bg-sm.png) !important;
+  }
+  .banner-title {
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mob-header-fixed {
+    position: fixed;
+  }
+}
