@@ -1,4 +1,4 @@
-# y
+# Next Kit - Nuxt js based Free UI Kit
 
 ## Build Setup
 
