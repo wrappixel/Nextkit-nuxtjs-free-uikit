@@ -109,9 +109,37 @@ More information about the usage of this directory in [the documentation](https:
 </li>
 </ul>
 
-<!-- Upgrade to Premium version of Template -->
-<h2>Upgrade to Premium Admin Dashboards</h2>
-
+<!-- Free and Premium Templates -->
+<h2>Free and Premium Templates</h2>
+<!-- Ui Kits  -->
+<table>
+  <thead>
+<tr>
+<th>Wrapkit Bootstrap</th>
+<th>Nextkit – Nextjs Free UI Kit</th>
+<th>WrapKit React Lite UI Kit</th>
+</tr>
+</thead>
+  <tbody>
+     <tr>
+      <td>
+        <a href="https://www.wrappixel.com/templates/wrapkit/" rel="nofollow" width="150px">
+          <img src="https://www.wrappixel.com/wp-content/uploads/edd/2020/06/wrapkit-complete-ui-kit-y-20.jpg" alt="Wrapkit Bootstrap" style="max-width:150px;">
+        </a>
+      </td> 
+      <td>
+        <a href="https://www.wrappixel.com/templates/nextkit-nextjs-free-uikit/" rel="nofollow" width="150px">
+          <img src="https://www.wrappixel.com/wp-content/uploads/edd/2021/09/nextkit-nextjs-free-uikit.jpg" alt="Nextkit – Nextjs Free UI Kit" style="max-width:150px;">
+        </a>
+      </td> 
+      <td>
+        <a href="https://www.wrappixel.com/templates/wrapkit-react-lite/" rel="nofollow" width="150px">
+          <img src="https://www.wrappixel.com/wp-content/uploads/edd/2020/04/wrapkit-react-lite-y.jpg" alt="WrapKit React Lite UI Kit" style="max-width:150px;">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 <!-- bootstrap premium dashboards -->
 <table>
 <thead>
