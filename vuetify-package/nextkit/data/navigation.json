@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Custom Components",
+    "dd": false,
+    "icon": "mdi-arrow-right",
+    "to": "/"
+  },
+  {
+    "id": 2,
+    "title": "Basic Components",
+    "dd": false,
+    "icon": "mdi-arrow-right",
+    "to": "/basic-components/"
+  }
+]

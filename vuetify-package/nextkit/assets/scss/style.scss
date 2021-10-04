@@ -1,0 +1,39 @@
+// ================================== //
+// Required Files
+// ================================== //
+@import "~vuetify/src/styles/styles.sass";
+@import "custom-variable";
+
+// ================================== //
+// Vuetify overrides
+// ================================== //
+@import "vuetify/overrides";
+
+// ================================== //
+// Template Common Components
+// ================================== //
+@import "template/header";
+@import "template/footer";
+@import "template/navigation";
+@import "template/animation";
+
+// ================================== //
+// Sections
+// ================================== //
+@import "template/section/banner";
+@import "template/section/coming";
+@import "template/section/ui";
+@import "template/section/section-header";
+@import "template/section/features";
+@import "template/section/portfolio";
+@import "template/section/pricing";
+@import "template/section/team";
+@import "template/section/testimonial";
+@import "template/section/blog";
+@import "template/section/c2a";
+@import "template/section/contact";
+
+// ================================== //
+// Icons
+// ================================== //
+@import "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css";

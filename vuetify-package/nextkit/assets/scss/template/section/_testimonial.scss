@@ -1,0 +1,13 @@
+.testimonial-card {
+  .v-card__text {
+    padding: 40px 35px !important;
+  }
+  p {
+    color: $dark;
+    line-height: 26px;
+  }
+  .testimonial-img {
+    width: 60px;
+    height: 60px;
+  }
+}

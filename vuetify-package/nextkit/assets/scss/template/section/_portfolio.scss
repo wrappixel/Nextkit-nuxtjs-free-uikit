@@ -1,0 +1,16 @@
+.portfolio-card {
+  .portfolio-img {
+    overflow: hidden;
+    max-height: 255px;
+    img {
+      transition: 0.1s ease-in;
+      cursor: pointer;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

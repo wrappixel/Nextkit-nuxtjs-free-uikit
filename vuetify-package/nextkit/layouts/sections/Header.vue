@@ -33,7 +33,7 @@
                 color="white"
                 nuxt
                 target="_blank"
-                href="/"
+                href="https://www.wrappixel.com/templates/nextkit-nuxtjs-free-uikit/"
                 elevation="0"
               >
                 Download Free
