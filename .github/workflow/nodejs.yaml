@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ nuxt3 ]
+    branches: nuxt3
   pull_request:
-    branches: [ nuxt3 ]
+    branches: nuxt3
 
 jobs:
   build:
