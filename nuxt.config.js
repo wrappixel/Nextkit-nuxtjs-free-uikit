@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   // ! stop process. uncomment below. and run `npm run dev`. log error:
   // ! Cannot read property 'callHook' of undefined at Object.invoke (/D:/git/hub/Nextkit-nuxtjs-free-uikit/node_modules/nuxi/dist/chunks/dev.mjs:6795:31)
-  bridge: false,
+  // bridge: false,
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
