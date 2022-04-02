@@ -1,4 +1,12 @@
-export default {
+import { defineNuxtConfig } from "@nuxt/bridge";
+
+export default defineNuxtConfig({
+  // ! run `npm run dev`, log error: [worker] Cannot find package '@nuxt/devalue' imported from D:\git\hub\Nextkit-nuxtjs-free-uikit\.nuxt\nitro\index.mjs
+  // ! uncomment below. error gone
+
+  // ! stop process. uncomment below. and run `npm run dev`. log error:
+  // ! Cannot read property 'callHook' of undefined at Object.invoke (/D:/git/hub/Nextkit-nuxtjs-free-uikit/node_modules/nuxi/dist/chunks/dev.mjs:6795:31)
+  bridge: false,
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -55,4 +63,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
-};
+});

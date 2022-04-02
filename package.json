@@ -5,17 +5,18 @@
   "description": "NextUI - Free Nuxt Js UI Kit",
   "author": "Wrappixel",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi start",
+    "generate": "nuxi generate"
   },
   "dependencies": {
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7",
+    "nuxt-edge": "latest",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27480376.fdd38f9",
     "@nuxtjs/vuetify": "^1.12.1"
   }
 }
