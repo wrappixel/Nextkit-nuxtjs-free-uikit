@@ -8,9 +8,12 @@
     ./ Banner
     ----------------------------------------------- -->
     <!-- -----------------------------------------------
-    All Components
+    Top Featured 
     ----------------------------------------------- -->
-    <AllCustomComponents />
+    <BannerText
+      title="Banner"
+      detail="Here you can check Demos we created you can easily use it. Its quite easy to Create your own dream website & dashboard in No-time."
+    />
     <!-- -----------------------------------------------
     ./ All Components
     ----------------------------------------------- -->
@@ -26,6 +29,7 @@
 
 <script>
 import Banner from '@/components/protrip/Banner'
+import BannerText from '@/components/protrip/BannerText'
 export default {
   head() {
     return {
@@ -44,7 +48,9 @@ export default {
     return {}
   },
   components: {
-    Banner: () => import('@/components/shared/lp-banner/Banner'),
+    Banner,
+    BannerText,
+    BannerText1: () => import('@/components/custom/banner/BannerText'),
     ComingSoon: () => import('@/components/shared/coming-soon/ComingSoon'),
     AllCustomComponents: () => import('@/components/custom/AllCustomComponents'),
   },
