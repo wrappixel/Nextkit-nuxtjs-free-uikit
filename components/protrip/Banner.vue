@@ -5,7 +5,7 @@
             Start Banner
         ----------------------------------------------- -->
       <v-row justify="center">
-        <v-col cols="12" md="7" lg="6" class="d-flex align-center">
+        <v-col cols="12" md="8" lg="6" class="d-flex align-center">
           <div class="text-center text-md-left">
             <h1 class="banner-title font-weight-bold white--text">
               Build stunning websites with NuxtJs UI Kit
@@ -38,9 +38,6 @@
               </v-btn>
             </div>
           </div>
-        </v-col>
-        <v-col cols="12" md="5" lg="6">
-          <v-img :src="img" alt="banner" />
         </v-col>
       </v-row>
 

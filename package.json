@@ -11,6 +11,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/device": "^3.0.0",
+    "@nuxtjs/i18n": "^7.3.0",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "vuetify": "^2.5.5"

@@ -3,7 +3,7 @@
     <!-- -----------------------------------------------
           Start Header
     ----------------------------------------------- -->
-    <v-app-bar app absolute class="app-header" flat elevate-on-scroll>
+    <v-app-bar app elevate-on-scroll class="app-header protrip-nav" elevation="4" fixed>
       <v-container class="py-0 fill-height">
         <!-- Logo -->
         <Logo />
@@ -23,19 +23,11 @@
               <n-link class="nav-link" nuxt to="/"> Custom Components </n-link>
             </li>
             <li class="nav-item" text>
-              <n-link class="nav-link" nuxt to="/basic-components">
-                Basic Components
-              </n-link>
+              <n-link class="nav-link" nuxt to="/basic-components"> Basic Components </n-link>
             </li>
             <li class="nav-item">
               <!-- login-regiter -->
-              <v-btn
-                color="white"
-                nuxt
-                target="_blank"
-                href="/"
-                elevation="0"
-              >
+              <v-btn color="white" nuxt target="_blank" href="/" elevation="0">
                 Download Free
               </v-btn>
             </li>
@@ -51,20 +43,20 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
 
   components: {
-    Logo: () => import("@/layouts/sections/Logo")
+    Logo: () => import('@/layouts/sections/Logo'),
   },
   data() {
     return {
-      isActive: false
-    };
+      isActive: false,
+    }
   },
   methods: {
-    toggleClass: function(event) {
-      this.isActive = !this.isActive;
-    }
-  }
-};
+    toggleClass: function (event) {
+      this.isActive = !this.isActive
+    },
+  },
+}
 </script>
