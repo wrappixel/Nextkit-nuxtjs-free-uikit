@@ -1,44 +1,34 @@
 <template>
-  <div class="banner-wrapper">
+  <div class="banner-wrapper protrip-banner">
+    <img class="img-bg" :lazy-src="img" max-height="150" max-width="250" :src="img"> </img>
     <v-container>
       <!-- -----------------------------------------------
             Start Banner
         ----------------------------------------------- -->
       <v-row justify="center">
-        <v-col cols="12" md="8" lg="6" class="d-flex align-center">
+        <v-col cols="12" md="8" lg="6" class="d-flex align-center justify-center banner-text">
           <div class="text-center text-md-left">
-            <h1 class="banner-title font-weight-bold white--text">
-              Build stunning websites with NuxtJs UI Kit
-            </h1>
-            <h4 class="banner-subtitle white--text font-weight-regular">
-              Free Vuetify UI Kit with Lots of Ready to Use Sections
-            </h4>
-            <div class="mt-16 pt-2">
-              <v-btn
-                color="error"
-                class="mr-0 mr-md-8 mb-5 mb-md-0 btn-custom-md"
-                nuxt
-                large
-                target="_blank"
-                href="/"
-                elevation="0"
-              >
-                Download Free
-              </v-btn>
-              <v-btn
-                nuxt
-                large
-                to="/coming-soon"
-                class="btn-custom-md"
-                outlined
-                color="white"
-                elevation="0"
-              >
-                Upgrade to Pro
-              </v-btn>
-            </div>
+            <!-- < class="banner-title font-weight-bold white--text "> -->
+          <vue-typed-js :strings="['Where do you want to go?']" :loop="true"
+            :smartBackspace='true'
+            :typeSpeed='120'
+            :backSpeed='20'
+            :backDelay='1000'>
+            <h1 class="typing banner-title font-weight-bold white--text"></h1>
+          </vue-typed-js>
+             
           </div>
         </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="12" md="8" lg="6" class="d-flex align-center justify-center banner-text">
+          <div class="text-center text-md-left">
+            <h1 class="banner-title font-weight-bold white--text">
+              Where do you want to go?
+            </h1>
+          </div>
+        </v-col>
+        
       </v-row>
 
       <!-- -----------------------------------------------
@@ -53,9 +43,10 @@ export default {
   data() {
     return {}
   },
+  
   computed: {
     img() {
-      return require('@/assets/images/landingpage/banner-img.png')
+      return require('@/assets/images/landingpage/travel.jpeg')
     },
   },
 }
