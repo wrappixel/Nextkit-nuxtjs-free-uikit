@@ -8,15 +8,153 @@
     ./ Banner
     ----------------------------------------------- -->
     <!-- -----------------------------------------------
-    Top Featured 
+    Top Featured
     ----------------------------------------------- -->
-    <BannerText
-      title="Banner"
-      detail="Here you can check Demos we created you can easily use it. Its quite easy to Create your own dream website & dashboard in No-time."
-    />
+    <div class="blog-component mini-spacer">
+      <v-container>
+        <!-- -----------------------------------------------
+            Start Blog Text
+        ----------------------------------------------- -->
+        <v-row justify="center">
+          <v-col cols="12" sm="10" md="9" lg="7">
+            <div class="text-center">
+              <h2 class="section-title font-weight-medium">Recent Blogs</h2>
+              <p>
+                You can relay on our amazing features list and also our customer
+                services will be great experience for you without doubt and in
+                no-time
+              </p>
+            </div>
+          </v-col>
+        </v-row>
+
+        <!-- -----------------------------------------------
+            End Blog Text
+        ----------------------------------------------- -->
+        <!-- -----------------------------------------------
+            Start Blog
+        ----------------------------------------------- -->
+        <v-row class="mt-13" justify="center">
+          <v-col cols="12" md="6" lg="4">
+            <v-card elevation="0" class="blog-card overflow-hidden mb-15">
+              <div class="position-relative mb-10">
+                <a href="#">
+                  <v-img
+                    :src="require('@/assets/images/blog/img1.jpg')"
+                    alt="blog"
+                    class="blog-img"
+                  />
+                </a>
+              </div>
+              <div>
+                <p class="mt-2 mb-2 mini-short-des">
+                  Business Park, Opp. Corns Sam Restaurant
+                </p>
+                <a
+                  href="#"
+                  class="
+                    blog-title
+                    text-decoration-none
+                    font-weight-bold font-22
+                  "
+                > Learn from small things to create something bigger.
+                </a>
+                <div class="home-trip-price font-weight-medium font-18 mt-5 ">
+                  <span class="text-themecolor text-line"> 1,000,000 VND </span>
+
+                  <v-chip class="ma-2" color="error" label text-color="white">
+                    <v-icon left> mdi-label </v-icon>
+                    800,000 VND
+                  </v-chip>
+                </div>
+                <v-btn class="mt-15" outlined color="error"> Book now </v-btn>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="6" lg="4">
+            <v-card elevation="0" class="blog-card overflow-hidden mb-15">
+              <div class="position-relative mb-10">
+                <a href="#">
+                  <v-img
+                    :src="require('@/assets/images/blog/img1.jpg')"
+                    alt="blog"
+                    class="blog-img"
+                  />
+                </a>
+              </div>
+              <div>
+                <p class="mt-2 mb-2 mini-short-des">
+                  Business Park, Opp. Corns Sam Restaurant
+                </p>
+                <a
+                  href="#"
+                  class="
+                    blog-title
+                    text-decoration-none
+                    font-weight-bold font-22
+                  "
+                > Learn from small things to create something bigger.
+                </a>
+                <div class="home-trip-price font-weight-medium font-18 mt-5 ">
+                  <span class="text-themecolor text-line"> 1,000,000 VND </span>
+
+                  <v-chip class="ma-2" color="error" label text-color="white">
+                    <v-icon left> mdi-label </v-icon>
+                    800,000 VND
+                  </v-chip>
+                </div>
+                <v-btn class="mt-15" outlined color="error"> Book now </v-btn>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="6" lg="4">
+            <v-card elevation="0" class="blog-card overflow-hidden mb-15">
+              <div class="position-relative mb-10">
+                <a href="#">
+                  <v-img
+                    :src="require('@/assets/images/blog/img1.jpg')"
+                    alt="blog"
+                    class="blog-img"
+                  />
+                </a>
+              </div>
+              <div>
+                <p class="mt-2 mb-2 mini-short-des">
+                  Business Park, Opp. Corns Sam Restaurant
+                </p>
+                <a
+                  href="#"
+                  class="
+                    blog-title
+                    text-decoration-none
+                    font-weight-bold font-22
+                  "
+                > Learn from small things to create something bigger.
+                </a>
+                <div class="home-trip-price font-weight-medium font-18 mt-5 ">
+                  <span class="text-themecolor text-line"> 1,000,000 VND </span>
+
+                  <v-chip class="ma-2" color="error" label text-color="white">
+                    <v-icon left> mdi-label </v-icon>
+                    800,000 VND
+                  </v-chip>
+                </div>
+                <v-btn class="mt-15" outlined color="error"> Book now </v-btn>
+              </div>
+            </v-card>
+          </v-col>
+        </v-row>
+
+        <!-- -----------------------------------------------
+            End Blog
+        ----------------------------------------------- -->
+      </v-container>
+    </div>
     <!-- -----------------------------------------------
     ./ All Components
+
     ----------------------------------------------- -->
+
     <!-- -----------------------------------------------
     Coming Soon
     ----------------------------------------------- -->

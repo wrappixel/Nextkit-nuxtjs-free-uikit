@@ -1,12 +1,83 @@
 .protrip-banner {
-  .img-bg {
-    width: 100%;
+  img {
+    width: auto;
+    min-width: 100%;
     position: absolute;
-    max-height: 700px;
+    height: 700px;
   }
   .banner-text {
     z-index: 1;
   }
   .banner-title {
   }
+}
+
+.search-box {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 20px;
+  height: auto;
+
+  .search-title {
+    font-size: x-large;
+    font-weight: bolder;
+  }
+
+  .v-input__slot::before {
+    border: none !important;
+  }
+  .v-input__icon {
+    display: none;
+  }
+  .v-autocomplete__content {
+    border-radius: 12px !important;
+  }
+  .icon-bold {
+    color: #3a404d;
+  }
+  .v-text-field__details {
+    display: none;
+  }
+  .wall {
+
+    border-left: 1px groove #a2a2a266;
+    // border-style: groove;
+    height: 70%;
+  }
+  .wall-container {
+    height: 100px;
+  }
+
+  .v-input input {
+    font-size: 14px;
+  }
+
+  .search-btn btn {
+    width: 100%;
+  }
+  .v-btn:not(.v-btn--round).v-size--large {
+    min-width: 0px;
+  }
+
+  @media (min-width: 1000px) {
+    .search-btn {
+      margin-left: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wall-container {
+      display: none;
+      width: 10px;
+    }
+  }
+
+}
+
+.mini-short-des {
+  font-size: 14px;
+}
+
+.text-line {
+  text-decoration: line-through;
 }
