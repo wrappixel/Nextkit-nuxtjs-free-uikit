@@ -38,7 +38,7 @@ $right-px: -4 0 4 8 10 12 16 20 24 32 36 40 48 64 72 80 96;
     }
   }
   @each $i in $top-px {
-    .pt#{$i} {
+    .pt-#{$i} {
       padding-top: #{$i}px;
     }
     .mt-#{$i} {
