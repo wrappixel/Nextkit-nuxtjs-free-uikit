@@ -3,7 +3,7 @@
     <!-- -----------------------------------------------
           Start Header
     ----------------------------------------------- -->
-    <v-app-bar app elevate-on-scroll class="app-header protrip-nav" elevation="4" fixed>
+    <v-app-bar app elevate-on-scroll class="app-header protrip-nav" :color="bg" elevation="4">
       <v-container class="py-0 fill-height">
         <!-- Logo -->
         <Logo />
@@ -51,7 +51,17 @@ export default {
   data() {
     return {
       isActive: false,
+      bg: 'transparent'
     }
+  },
+  mounted() {
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop >= 20) {
+        this.bg = "white";
+      } else {
+        this.bg = "transparent";
+      }
+    };
   },
   methods: {
     toggleClass: function (event) {

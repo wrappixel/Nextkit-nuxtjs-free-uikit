@@ -34,5 +34,5 @@
   "email_invalid": "Sai định dạng email",
   "phone_invalid": "Sai định dạng số điện thoại",
   "merchant_form": "Thông tin của đại lý",
-  "merchant_description": ""
+  "merchant_description": "merchant"
 }

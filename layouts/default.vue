@@ -2,9 +2,12 @@
   <v-app dark>
     <!--v-if="$route.name!=='login'"-->
     <Header />
-    <v-main>
-      <nuxt />
-    </v-main>
+    <div class="protrip-main">
+      <v-main>
+        <nuxt />
+      </v-main>
+    </div>
+
     <Footer />
   </v-app>
 </template>
