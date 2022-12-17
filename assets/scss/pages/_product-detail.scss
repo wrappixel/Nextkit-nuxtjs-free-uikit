@@ -26,4 +26,12 @@
       max-width: 100%;
     }
   }
+
+  .image-slider{
+    width: fit-content;
+
+    @media screen and (max-width: 960px){
+      width: auto;
+    }
+  }
 }

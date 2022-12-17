@@ -12,15 +12,11 @@ export default {
     },
   ],
   detectBrowserLanguage: {
-    alwaysRedirect: false,
-    fallbackLocale: '',
-    redirectOn: 'root',
-    useCookie: false,
-    cookieCrossOrigin: false,
-    cookieDomain: null,
+    useCookie: true,
     cookieKey: 'i18n_redirected',
-    cookieSecure: false,
+    redirectOn: 'root',  // recommended
   },
+  lazy: true,
   langDir: "locales/",
   vueI18nLoader: true,
   defaultLocale: "vi",
@@ -29,5 +25,4 @@ export default {
     fallbackLocale: "vi",
   },
   strategy: "no_prefix",
-  skipSettingLocaleOnNavigate: true
 }

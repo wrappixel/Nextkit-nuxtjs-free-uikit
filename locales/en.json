@@ -33,5 +33,10 @@
   "merchant_form": "Merchant form",
   "merchant_description": "",
   "from_price": "from",
-  "phone_number": "Phone number"
+  "phone_number": "Phone number",
+  "language": "language",
+  "send_dealer_code": "Send code",
+  "email_field": "Email",
+  "submit": "submit",
+  "contact_information": "Contact information"
 }

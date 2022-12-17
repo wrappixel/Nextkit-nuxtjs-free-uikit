@@ -19,6 +19,8 @@
           <h4 class="font-weight-regular font-18">Phone</h4>
           <p class="mt-10 mb-0">Reception : +205 123 4567</p>
           <p>Office : +207 235 7890</p>
+
+          <p @click="goToDealerPage" class="text-capitalize cursor-pointer">{{$t('merchant')}}</p>
         </v-col>
         <!-- -----------------------------------------------
         Third Column
@@ -83,6 +85,8 @@
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: "Footer",
   data() {
@@ -91,6 +95,19 @@ export default {
     };
   },
   components: {},
+  mounted() {
+    this.init()
+  },
+  methods:{
+    ...mapActions('contact-information', ['fetchContactInformation']),
+    async init() {
+      const promise = [this.fetchContactInformation()]
+
+      await Promise.all(promise)
+    },
+    goToDealerPage() {
+      this.$router.push({path: '/dealer'})
+    }
+  }
 };
 </script>
- 

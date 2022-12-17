@@ -1,6 +1,10 @@
-.protrip-main {
+.product {
   .v-main {
     padding: 80px 0 0 !important;
+  }
+
+  .v-sheet {
+    //background-color: $danger !important;
   }
 }
 
@@ -12,4 +16,21 @@
   .p-br#{$i}-imp {
     border-radius: #{$i}px !important;
   }
+}
+
+.language-select {
+  .v-input__prepend-inner {
+    margin-top: 10px !important;
+    margin-right: 0 !important;
+  }
+}
+
+.bg-danger-grediant {
+  &__light {
+    background: linear-gradient(90deg, #ff4d7ec9 0, #ff6a5b47);
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

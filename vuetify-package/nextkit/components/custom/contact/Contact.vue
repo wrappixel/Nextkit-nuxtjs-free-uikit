@@ -7,8 +7,8 @@
       <v-row >
         <v-col cols="12">
           <div>
-            <h4 class="font-weight-medium contact-title mt-0">
-              Quick Contact
+            <h4 class="font-weight-medium contact-title mt-0 text-capitalize">
+              {{ $t('contact_information') }}
             </h4>
             <v-form v-model="valid">
               <v-row class="mt-15">
@@ -26,7 +26,7 @@
                     outlined
                     type="email"
                     v-model="email"
-                    :label="$t('email')"
+                    :label="$t('email_field')"
                     placeholder="Email"
                     :rules="rules.email"
                   ></v-text-field>
@@ -53,12 +53,12 @@
               <v-btn
                 nuxt
                 to="/"
-                class="btn-custom-md mt-12"
-                color="primary"
+                class="btn-custom-md mt-12 text-capitalize"
+                color="error"
                 elevation="0"
                 :disabled="!valid"
               >
-                Submit
+                {{$t('submit')}}
               </v-btn>
             </v-form>
           </div>

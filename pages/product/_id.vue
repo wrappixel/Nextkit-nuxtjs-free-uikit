@@ -2,12 +2,12 @@
   <div class="product-detail">
     <v-container>
       <v-row>
-        <v-col cols="12" lg="8" md="8" sm="12">
+        <v-col lg="8" md="8" sm="12">
           <!--    Carousel    -->
           <div class="mb-16">
             <v-carousel hide-delimiters v-model="currentImg" class="elevation-8">
-              <v-carousel-item v-for="i in productDetail.images" :key="i.id">
-                <v-img :src="i.src"></v-img>
+              <v-carousel-item v-for="i in productDetail.images" :key="i.id" :src="i.src">
+<!--                <v-img :src="i.src"></v-img>-->
               </v-carousel-item>
             </v-carousel>
             <ImageSlide :images="productDetail.images" @onSelectImage="(id) => currentImg = id" :current.sync="currentImg"/>
@@ -23,7 +23,7 @@
 
 
         </v-col>
-        <v-col cols="12" lg="4" md="4" sm="12">
+        <v-col lg="4" md="4" sm="12">
           <div>
             <h1>{{ productDetail.title }}</h1>
             <div class="product-price">
@@ -43,7 +43,7 @@
             </div>
             <!--    Button register tour        -->
             <div>
-              <v-btn class="w-100" color="primary"
+              <v-btn class="w-100" color="error"
                      @click="$vuetify.goTo('#contact-form', {duration: 1000, easing:'easeInQuad'})">
                 <span class="font-weight-bold">
                   {{ $t('checkout') }}
@@ -68,6 +68,7 @@ import ImageSlide from "~/components/shared/ImagesCustom/ImageSlide";
 import Contact from "~/vuetify-package/nextkit/components/custom/contact/Contact";
 
 export default {
+  layout: 'product',
   name: 'ProductDetail',
   components: {Contact, ImageSlide},
   data() {
