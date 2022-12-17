@@ -1,5 +1,15 @@
 .protrip-main {
   .v-main {
-    padding: 64px 0 0 !important;
+    padding: 80px 0 0 !important;
+  }
+}
+
+@each $i in $border-radius-px {
+  .p-br#{$i} {
+    border-radius: #{$i}px;
+  }
+
+  .p-br#{$i}-imp {
+    border-radius: #{$i}px !important;
   }
 }

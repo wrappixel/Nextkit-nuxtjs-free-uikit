@@ -4,4 +4,26 @@
     padding: 0 0 15px;
     margin: 0 0 15px;
   }
+
+  .v-rating {
+    .v-icon {
+      &:first-child{
+        padding-left: 0;
+      }
+    }
+  }
+
+  .image-active {
+
+  }
+
+  .image-deactive {
+    opacity: 0.7;
+  }
+
+  &__description {
+    & img {
+      max-width: 100%;
+    }
+  }
 }
