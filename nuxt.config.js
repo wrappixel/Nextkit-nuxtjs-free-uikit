@@ -54,6 +54,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "@nuxtjs/axios",
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth',
   ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -73,7 +75,9 @@ export default {
     middleware: ['i18n']
   },
   axios: {
-    baseUrl: "https://api.miinho.click/",
+    baseUrl: process.env.BASE_URL || "https://api.miinho.click/",
+    proxyHeaders: false,
+    credentials: false,
   },
   serverMiddleware: ['~/server-middleware/index'],
   googleFonts: {
@@ -87,5 +91,27 @@ export default {
       },
     },
     download: true
-  }
+  },
+  // auth: {
+  //   strategies: {
+  //     local: {
+  //       endpoints: {
+  //         staff: {
+  //           url: '/staff',
+  //           method: 'post',
+  //           propertyName: 'access',
+  //         },
+  //         // tokenRequired: true,
+  //         // logout: false
+  //       }
+  //     },
+  //     watchLoggedIn: true,
+  //     // redirect: {
+  //     //   login: '/login',
+  //     //   logout: '/',
+  //     //   callback: '/login',
+  //     //   home: '/'
+  //     // }
+  //   }
+  // },
 };

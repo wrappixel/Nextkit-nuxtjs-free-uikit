@@ -28,7 +28,8 @@ export default {
   },
   data(){
     return {
-      background: 'bg-danger-grediant'
+      background: 'bg-danger-grediant',
+      textNav: 'white--text'
     }
   },
   components: {

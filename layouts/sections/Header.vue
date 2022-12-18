@@ -19,6 +19,11 @@
           @click="isActive = !isActive"
         >
           <ul class="navbar-nav">
+            <v-tabs background-color="transparent" @change="onChangeRoute" v-model="currentRoute" color="white">
+              <v-tab v-for="(route, index) in routesBar" :value="route.key" :href="route.key" :key="index">
+                <h2 class="text-capitalize font-weight-bold" :class="customColor">{{route.value}}</h2>
+              </v-tab>
+            </v-tabs>
             <li class="nav-item">
               <!-- login-regiter -->
               <v-menu
@@ -28,8 +33,8 @@
                 :close-on-click="true"
               >
                 <template v-slot:activator="{on, attrs}">
-                  <v-btn color="error" elevation="0" v-bind="attrs" v-on="on" class="text-capitalize">
-                    {{ $t('language') }}
+                  <v-btn elevation="0" v-bind="attrs" v-on="on" class="text-capitalize transparent" active-class="transparent" depressed>
+                    <country-flag :country="language.flag" size="big"/>
                   </v-btn>
                 </template>
 
@@ -41,18 +46,13 @@
                                   item-text="label" item-value="locale" class="language-select" outlined>
                           <template v-slot:prepend-inner>
                             <p class="my-0">
-                              <country-flag :country="language.flag" size="medium"/>
+                              <country-flag :country="language.flag" size="normal"/>
                             </p>
                           </template>
                         </v-select>
                       </v-col>
                     </v-row>
                   </v-list-item>
-                  <div class="px-16">
-                    <v-btn class="w-100 text-capitalize" color="error" @click="onSave">
-                      {{ $t('save') }}
-                    </v-btn>
-                  </div>
 
                 </v-list>
               </v-menu>
@@ -77,6 +77,10 @@ export default {
     background: {
       type: String,
       default: () => 'transparent'
+    },
+    textColor: {
+      type: String,
+      default: () => 'white--text'
     }
   },
   components: {
@@ -103,18 +107,37 @@ export default {
         locale: 'vi',
         label: 'Vietnamese'
       },
-      locale: 'vi'
+      locale: 'vi',
+      routesBar: [
+        {
+          key: 'hotels',
+          value: this.$t('hotels')
+        },
+        {
+          key: 'tours',
+          value: this.$t('tours')
+        },
+        {
+          key: 'plants',
+          value: this.$t('plants')
+        },
+      ],
+      currentRoute:'',
+      customColor: 'white--text'
     }
   },
   mounted() {
     if (localStorage.getItem('locale')) {
       this.$i18n.locale = localStorage.getItem('locale')
+      this.onChangeLang(this.$i18n.locale)
     }
     window.onscroll = () => {
       if (document.documentElement.scrollTop >= 20) {
         this.bg = "white";
+        this.customColor = 'black--text'
       } else {
         this.bg = this.background
+        this.customColor = 'white--text'
       }
     };
     this.bg = this.background
@@ -128,11 +151,13 @@ export default {
       const language = this.languages.find(item => item.locale === locale)
       this.language = language
       this.locale = locale
-    },
-    onSave() {
+
       this.setLocale(this.locale)
       localStorage.setItem('locale', this.locale)
       this.$i18n.locale = this.locale
+    },
+    onChangeRoute(name) {
+      console.log(name)
     }
   },
   watch: {
