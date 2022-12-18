@@ -50,8 +50,8 @@ export default {
     },
   },
   methods: {
-    handleApplyFilters() {
-
+    handleApplyFilters(payload) {
+      this.$emit('search', payload)
     }
   }
 }

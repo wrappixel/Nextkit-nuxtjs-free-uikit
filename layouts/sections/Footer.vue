@@ -101,9 +101,9 @@ export default {
   methods:{
     ...mapActions('contact-information', ['fetchContactInformation']),
     async init() {
-      const promise = [this.fetchContactInformation()]
-
-      await Promise.all(promise)
+      // const promise = [this.fetchContactInformation()]
+      //
+      // await Promise.all(promise)
     },
     goToDealerPage() {
       this.$router.push({path: '/dealer'})

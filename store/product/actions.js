@@ -1,5 +1,5 @@
-import tourisServices from "~/services/apis/tourisServices";
-import {SET_PRODUCT, SET_PRODUCTS} from "~/store/product/constant";
+  import tourisServices from "~/services/apis/tourisServices";
+import {SET_PRODUCT, SET_PRODUCTS, SET_LOCATIONS} from "~/store/product/constant";
 
 export default {
   async fetchDetailProduct({commit}, payload) {
@@ -14,5 +14,17 @@ export default {
     if (result.success) commit(SET_PRODUCTS, {...result.trip})
 
     return result
-  }
+  },
+
+  async fetchTopFeatured() {
+    const result = await tourisServices.fetchListFeatured()
+    return result
+  },
+
+  async fetchAllLocations({commit}, payload) {
+    const result = await tourisServices.fetchListLocations()
+    if (result.success) commit(SET_LOCATIONS, [...result.locations])
+    return result
+  },
+
 }

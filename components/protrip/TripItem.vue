@@ -2,7 +2,7 @@
   <v-card elevation="0" class="blog-card overflow-hidden mb-15">
     <div class="position-relative mb-10">
       <a href="#">
-        <v-img :src="trip.img_src" alt="blog" class="blog-img" />
+        <v-img :src="trip.img_src" alt="blog" class="blog-img" aspect-ratio="1.5" />
       </a>
     </div>
     <div>
@@ -19,20 +19,20 @@
         </p>
         <span
           class="text-themecolor"
-          :class="{ 'text-line': trip.price !== trip.compare_at_price }"
+          :class="{ 'text-line': hasCompareAtPrice }"
         >
-          {{ trip.price }} {{ currency }}
+          {{ compare_at_price | formatPrice }} {{ currency }}
         </span>
 
         <v-chip
-          v-if="trip.compare_at_price && trip.compare_at_price > 0"
           class="ma-2"
           color="error"
           label
           text-color="white"
+          v-if="hasCompareAtPrice"
         >
           <v-icon left> mdi-label</v-icon>
-          800,000 VND
+          {{ trip.price | formatPrice }} {{ currency }}
         </v-chip>
       </div>
       <v-btn class="mt-15" outlined color="error"> Book now</v-btn>
@@ -40,6 +40,8 @@
   </v-card>
 </template>
 <script>
+import {formatCurrency} from "@/core/utils/currency";
+
 export default {
   name: 'TripItem',
   props: {
@@ -60,6 +62,22 @@ export default {
         featured: true,
       },
     },
+  },
+  filters: {
+    formatPrice(price) {
+      return formatCurrency(price)
+    }
+  },
+  computed: {
+    compare_at_price(){
+      if (this.hasCompareAtPrice) {
+        return this.trip.compare_at_price
+      }
+      return this.trip.price
+    },
+    hasCompareAtPrice(){
+      return this.trip.compare_at_price && this.trip.compare_at_price > 0 && this.trip.compare_at_price > this.trip.price
+    }
   },
   data() {
     return {

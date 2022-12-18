@@ -4,5 +4,6 @@ import getters from "~/store/product/getters";
 
 export default {
   product:{},
-  products: {}
+  products: {},
+  locations:[]
 }
