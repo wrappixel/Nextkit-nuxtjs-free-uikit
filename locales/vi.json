@@ -34,5 +34,12 @@
   "email_invalid": "Sai định dạng email",
   "phone_invalid": "Sai định dạng số điện thoại",
   "merchant_form": "Thông tin của đại lý",
-  "merchant_description": ""
+  "merchant_description": "merchant",
+  "language": "ngôn ngữ",
+  "send_dealer_code": "gửi mã đại lý",
+  "email_field": "Email",
+  "submit": "xác nhận",
+  "from_price": "giá chỉ từ",
+  "contact_information": "thông tin liên hệ",
+  "save": "lưu"
 }

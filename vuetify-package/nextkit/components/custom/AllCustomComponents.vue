@@ -115,7 +115,7 @@ export default {
     Banner2: () => import("@/components/custom/banner/Banner2"),
     Feature1: () => import("@/components/custom/features/Feature1"),
     Feature2: () => import("@/components/custom/features/Feature2"),
-    Feature3: () => import("@/components/custom/features/Feature3"),
+    Feature3: () => import("@/components/custom/features/Feature-Dealer"),
     FormBanner1: () => import("@/components/custom/form-banner/FormBanner1"),
     Portfolio: () => import("@/components/custom/portfolio/Portfolio"),
     Pricing: () => import("@/components/custom/pricing/Pricing"),

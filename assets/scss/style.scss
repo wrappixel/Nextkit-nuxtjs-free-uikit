@@ -33,10 +33,12 @@
 @import 'template/section/c2a';
 @import 'template/section/contact';
 
+@import "pages/index";
+
 // ================================== //
 // Icons
 // ================================== //
 @import 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css';
-
+@import '~vuetify/src/styles/main.sass';
 @import 'protrip';
 @import 'ui';

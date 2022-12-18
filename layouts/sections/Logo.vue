@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <NLink to="/">
+    <NLink to="/new-home">
       <v-img
         :src="require('@/assets/images/logos/white-text.png')"
         alt="logo"

@@ -1,8 +1,8 @@
 <template>
-  <v-app dark>
+  <v-app dark class="product">
     <!--v-if="$route.name!=='login'"-->
-    <Header />
-    <div class="protrip-main">
+    <Header :background="background"/>
+    <div>
       <v-main>
         <nuxt />
       </v-main>
@@ -26,9 +26,17 @@ export default {
       ]
     };
   },
+  data(){
+    return {
+      background: 'bg-danger-grediant'
+    }
+  },
   components: {
     Header: () => import("@/layouts/sections/Header"),
     Footer: () => import("@/layouts/sections/Footer")
+  },
+  mounted() {
+
   },
   methods: {}
 };
