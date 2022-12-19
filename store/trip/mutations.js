@@ -1,4 +1,4 @@
-import {SET_PRODUCT, SET_PRODUCTS, SET_LOCATIONS} from "~/store/product/constant";
+import {SET_PRODUCT, SET_PRODUCTS, SET_LOCATIONS} from "~/store/trip/constant";
 
 export  default {
   [SET_PRODUCT](state, payload) {

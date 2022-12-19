@@ -1,32 +1,33 @@
 <template>
-  <v-sheet class="my-16 p-br4-imp" elevation="5" max-width="450">
-    <v-slide-group
-      v-model="image"
-      class="p-br16"
-      active-class="success"
-      show-arrows
-      center-active
-      light
-    >
-      <v-slide-item
-        v-for="i in images"
-        :key="i.id"
-        v-slot="{ active, toggle }"
-        class="mr-8"
+  <div class="image-slider">
+    <v-sheet class="my-16 p-br4-imp" elevation="0">
+      <v-slide-group
+        v-model="image"
+        class="p-br16"
+        active-class="success"
+        :show-arrows="false"
+        light
       >
-        <v-card
-          width="100"
-          height="150"
-          @click="toggle"
-          :class="active ? '' : 'image-deactive'"
+        <v-slide-item
+          v-for="i in images"
+          :key="i.id"
+          v-slot="{ active, toggle }"
+          class="mr-8  elevation-8"
         >
-          <v-scale-transition>
-            <v-img :src="i.src" height="150"/>
-          </v-scale-transition>
-        </v-card>
-      </v-slide-item>
-    </v-slide-group>
-  </v-sheet>
+          <v-card
+            width="100"
+            height="150"
+            @click="toggle"
+            :class="active ? '' : 'image-deactive'"
+          >
+            <v-scale-transition>
+              <v-img :src="i.src" height="150"/>
+            </v-scale-transition>
+          </v-card>
+        </v-slide-item>
+      </v-slide-group>
+    </v-sheet>
+  </div>
 </template>
 
 <script>

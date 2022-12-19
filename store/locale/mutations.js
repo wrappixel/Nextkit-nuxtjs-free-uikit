@@ -1,4 +1,4 @@
-import {SET_PRODUCT, SET_PRODUCTS} from "~/store/product/constant";
+import {SET_PRODUCT, SET_PRODUCTS} from "~/store/trip/constant";
 import {SET_LOCALE} from "@/store/locale/constant";
 
 export  default {

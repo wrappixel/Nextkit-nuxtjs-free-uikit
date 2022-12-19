@@ -7,7 +7,7 @@
     </div>
     <div>
       <p class="mt-2 mb-2 mini-short-des">
-        {{ trip.short_description_1 }}
+        {{ trip.super_short_description }}
       </p>
       <a href="#" class="blog-title text-decoration-none font-weight-bold font-22">
         {{ trip.title }}

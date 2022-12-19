@@ -33,5 +33,18 @@
     @media screen and (max-width: 960px){
       width: auto;
     }
+
+    .v-slide-group__prev {
+      display: none;
+    }
+
+    .v-slide-group__next {
+      display: none;
+    }
+  }
+
+  .pink {
+    background-color: #e91e63!important;
+    border-color: #e91e63!important;
   }
 }

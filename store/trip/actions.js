@@ -1,21 +1,17 @@
-  import tourisServices from "~/services/apis/tourisServices";
-import {SET_PRODUCT, SET_PRODUCTS, SET_LOCATIONS} from "~/store/product/constant";
+import tourisServices from "~/services/apis/tourisServices";
+import {SET_PRODUCT, SET_PRODUCTS} from "~/store/trip/constant";
 
 export default {
-  async fetchDetailProduct({commit}, payload) {
+  async fetchDetailTrip({commit}, payload) {
     const result = await tourisServices.getDetailTour(payload)
-    if (result.success) commit(SET_PRODUCT, {...result.trip, images: result.images})
-
     return result
   },
 
-  async fetchAllProducts({commit}, payload) {
+  async fetchAllTrips({commit}, payload) {
     const result = await tourisServices.fetchListAllTours(payload)
-    if (result.success) commit(SET_PRODUCTS, {...result.trip})
 
     return result
   },
-
   async fetchTopFeatured() {
     const result = await tourisServices.fetchListFeatured()
     return result
@@ -26,5 +22,4 @@ export default {
     if (result.success) commit(SET_LOCATIONS, [...result.locations])
     return result
   },
-
 }
