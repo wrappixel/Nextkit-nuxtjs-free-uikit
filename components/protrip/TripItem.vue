@@ -1,80 +1,88 @@
 <template>
-  <div>
-    <template v-if="isSuccess">
-      <v-card elevation="0" class="blog-card overflow-hidden mb-15">
-        <div class="position-relative mb-10">
-          <a href="#">
-            <v-img
-              :src="tripInfo.img_src"
-              alt="blog"
-              class="blog-img"
-            />
-          </a>
-        </div>
-        <div>
-          <p class="mt-2 mb-2 mini-short-des">
-            Business Park, Opp. Corns Sam Restaurant
-          </p>
-          <a
-            href="#"
-            class="
-                    blog-title
-                    text-decoration-none
-                    font-weight-bold font-22
-                  "
-          > {{ tripInfo.title }}
-          </a>
-          <div class="home-trip-price font-weight-medium font-18 mt-5 ">
-            <span class="text-themecolor text-line"> {{ tripInfo.compare_at_price | formatPrice }} </span>
+  <v-card elevation="0" class="blog-card overflow-hidden mb-15">
+    <div class="position-relative mb-10">
+      <a href="#">
+        <v-img :src="trip.img_src" alt="blog" class="blog-img" aspect-ratio="1.5" />
+      </a>
+    </div>
+    <div>
+      <p class="mt-2 mb-2 mini-short-des">
+        {{ trip.super_short_description }}
+      </p>
+      <a href="#" class="blog-title text-decoration-none font-weight-bold font-22">
+        {{ trip.title }}
+      </a>
+      <div class="home-trip-price font-weight-medium font-18 mt-5">
+        <p
+          ><i class="mt-4 mdi mdi-map-marker-outline f-1 icon-bold" />
+          {{ `${trip.location_from} - ${trip.location_to}` }}
+        </p>
+        <span
+          class="text-themecolor"
+          :class="{ 'text-line': hasCompareAtPrice }"
+        >
+          {{ compare_at_price | formatPrice }} {{ currency }}
+        </span>
 
-            <v-chip class="ma-2" color="error" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              {{tripInfo.price | formatPrice}}
-            </v-chip>
-          </div>
-          <v-btn class="mt-15" outlined color="error"> Book now </v-btn>
-        </div>
-      </v-card>
-    </template>
-    <template v-else>
-      Not found data
-    </template>
-  </div>
+        <v-chip
+          class="ma-2"
+          color="error"
+          label
+          text-color="white"
+          v-if="hasCompareAtPrice"
+        >
+          <v-icon left> mdi-label</v-icon>
+          {{ trip.price | formatPrice }} {{ currency }}
+        </v-chip>
+      </div>
+      <v-btn class="mt-15" outlined color="error"> Book now</v-btn>
+    </div>
+  </v-card>
 </template>
 <script>
-import {cloneDeep, isEmpty} from "lodash";
 import {formatCurrency} from "@/core/utils/currency";
 
 export default {
   name: 'TripItem',
-  data() {
-    return {
-      tripInfo: {},
-      isSuccess: true
-    }
-  },
   props: {
     trip: {
       type: Object,
-      default: () => {
-      }
-    }
-  },
-  mounted() {
-    this.init()
+      default: {
+        id: 0,
+        title: 'Learn from small things to create something bigger.',
+        handle: 'default-title-1670661861',
+        short_description_1: '3 days 2 nights, 3 stars hotel',
+        location_from: 'HN',
+        location_to: 'HCM',
+        price: 1000000,
+        compare_at_price: 500000,
+        img_src: 'https://assets.miinho.click/images/5404232a1314663e2d1570481061aa32.jpeg',
+        published: true,
+        staff_price: 20000000000,
+        featured: true,
+      },
+    },
   },
   filters: {
     formatPrice(price) {
       return formatCurrency(price)
     }
   },
-  methods: {
-    init() {
-      if (!isEmpty(this.trip)) {
-        this.tripInfo = cloneDeep(this.trip)
-        this.isSuccess = true
+  computed: {
+    compare_at_price(){
+      if (this.hasCompareAtPrice) {
+        return this.trip.compare_at_price
       }
+      return this.trip.price
+    },
+    hasCompareAtPrice(){
+      return this.trip.compare_at_price && this.trip.compare_at_price > 0 && this.trip.compare_at_price > this.trip.price
     }
-  }
+  },
+  data() {
+    return {
+      currency: 'VND',
+    }
+  },
 }
 </script>

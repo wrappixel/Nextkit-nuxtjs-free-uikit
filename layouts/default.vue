@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "default",
   head() {
     return {
       title: "NuxtJs UI kit | Free UI kit built with Vuetify",

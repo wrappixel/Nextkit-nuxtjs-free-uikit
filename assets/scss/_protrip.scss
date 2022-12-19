@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'Satisfy';
+  src: url(../font/Satisfy-Regular.ttf) format('truetype');
+}
+.no-margin {
+  margin: 0;
+}
+.section-sub-title {
+  font-size: 25px;
+  color: #003580;
+  line-height: 1;
+  text-align: center;
+  font-family: Satisfy;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .protrip-banner {
   img {
     width: auto;
@@ -39,7 +56,6 @@
     display: none;
   }
   .wall {
-
     border-left: 1px groove #a2a2a266;
     // border-style: groove;
     height: 70%;
@@ -71,7 +87,6 @@
       width: 10px;
     }
   }
-
 }
 
 .mini-short-des {
@@ -80,4 +95,35 @@
 
 .text-line {
   text-decoration: line-through;
+}
+
+.h100 {
+  height: 100%;
+}
+.featured-location {
+  .v-responsive__content {
+    height: 100%;
+    position: relative;
+  }
+  .v-responsive__content:hover {
+    background-color: rgba(26, 139, 243, 0.87);
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .feat-title {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px !important;
+    z-index: 10;
+  }
+  .v-application .title {
+    font-size: 20px !important;
+  }
+}
+
+.quick-contact {
+  h4 {
+    color: white;
+  }
+  color: white;
 }

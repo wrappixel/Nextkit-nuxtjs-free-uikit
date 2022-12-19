@@ -11,9 +11,9 @@
           <h3 class="search-title">{{ $t("from") }}</h3>
           <div class="flex flex-row">
             <v-autocomplete
-              :items="items"
+              :items="locations"
               :placeholder="$t('from_placeholder')"
-              v-model="filters.location_from"
+              v-model="filters.from"
               :filter="customFilter"
               item-text="city"
               item-value="city_code"
@@ -37,9 +37,9 @@
           <h3 class="search-title">{{ $t("to") }}</h3>
           <div class="flex flex-row">
             <v-autocomplete
-              :items="items"
+              :items="locations"
               :placeholder="$t('to_placeholder')"
-              v-model="filters.location_to"
+              v-model="filters.to"
               :filter="customFilter"
               item-text="city"
               item-value="city_code"
@@ -77,7 +77,6 @@ import { mapActions, mapState } from "vuex";
 export default {
   name: "SearchBox",
   data: () => ({
-    items: [],
     filters: {
       location_to: "",
       location_from: "",
@@ -88,6 +87,7 @@ export default {
       price_max: 0,
       order_by: "price DESC",
     },
+    locations: []
   }),
   props: {
     isFixed: {
@@ -96,23 +96,29 @@ export default {
     },
   },
   computed: {
-    ...mapState("core", {
-      destinations: (state) => state.countries,
-    }),
   },
   mounted() {
     this.init();
   },
   methods: {
-    ...mapActions("core", ["fetchLocations"]),
+    ...mapActions('product', ['fetchAllLocations']),
     async init() {
-      const promise = [this.fetchLocations()];
-      await Promise.all(promise);
-      this.items = this.destinations;
+      if (!this.locations || !this.locations.length) {
+        const res = await this.fetchAllLocations();
+        if (res && res.success) {
+          this.locations = res.locations
+        }
+      }
       this.filters = this.$route.query;
     },
     fetchTour() {
-      this.$emit("onApplyFilter", this.filters);
+      const fromName = this.locations.find((e) => {
+        return e.city_code === this.filters.from
+      }).city
+      const toName = this.locations.find((e) => {
+        return e.city_code === this.filters.to
+      }).city
+      this.$emit("onApplyFilter", {...this.filters, from_name: fromName, to_name: toName});
     },
     customFilter(item, queryText, itemText) {
       const textOne = item.city.toLowerCase();

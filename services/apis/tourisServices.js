@@ -16,7 +16,10 @@ export default {
       return service.get(`/api/trip/${payload.id}`)
     }
   },
-  fetchListFetured() {
+  fetchListFeatured() {
     return service.get(`/api/trip?featured=true`)
-  }
+  },
+  fetchListLocationsFeatured() {
+    return service.get(`/api/locations?featured=true`)
+  },
 }

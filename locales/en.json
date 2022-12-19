@@ -38,5 +38,9 @@
   "send_dealer_code": "Send code",
   "email_field": "Email",
   "submit": "submit",
-  "contact_information": "Contact information"
+  "contact_information": "Contact information",
+  "featured_trip_label": "Our Popular Tours",
+  "featured_trip_des": "choose your adventure",
+  "search_result": "Search result",
+  "search_result_for": "Search result from {from} to {to}"
 }
