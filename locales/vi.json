@@ -44,5 +44,9 @@
   "save": "lưu",
   "featured_trip_label": "Combo nổi bật",
   "featured_trip_des": "choose your adventure",
-  "search_result_for": "Kết quả tìm kiếm từ {from} đến {to}"
+  "search_result_for": "Kết quả tìm kiếm từ {from} đến {to}",
+  "search_result":"Kết quả tìm kiếm",
+  "hotels": "khách sạn",
+  "plants": "chuyến bay",
+  "tours":"tours"
 }

@@ -3,7 +3,6 @@
     <v-container>
       <template v-if="isLoading">
         <v-skeleton-loader
-          v-bind="attrs"
           type="article, actions"
         ></v-skeleton-loader>
       </template>
@@ -88,6 +87,34 @@ import ImageSlide from "~/components/shared/ImagesCustom/ImageSlide";
 import Contact from "~/vuetify-package/nextkit/components/custom/contact/Contact";
 
 export default {
+  head() {
+    return {
+      title: this.$data.productDetail.title,
+      description: this.$data.productDetail.short_description,
+      meta: [
+        {
+          hid: "og:title",
+          name: "og:title",
+          content: this.$data.productDetail.title
+        },
+        {
+          hid: "og:description",
+          name: "og:description",
+          content: this.$data.productDetail.short_description
+        }, 
+        {
+          hid: "title",
+          name: "title",
+          content: this.$data.productDetail.title
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.$data.productDetail.short_description
+        },       
+      ]
+    };
+  },
   layout: 'trip',
   name: 'TripDetail',
   components: {Contact, ImageSlide},

@@ -3,7 +3,7 @@
     <!-- -----------------------------------------------
     Banner
     ----------------------------------------------- -->
-    <Banner />
+    <Banner @search="onApplyFilterSearch"/>
     <!--  -----------------------------------------------
     ./ Banner
     ----------------------------------------------- -->
@@ -12,7 +12,7 @@
     ----------------------------------------------- -->
     <template v-if="loading">
       <div class="blog-component mini-spacer mt-36">
-        <HomeLoading />
+        <HomeLoading/>
       </div>
     </template>
     <template v-else>
@@ -40,7 +40,7 @@
           <v-row class="mt-13" justify="center">
             <template v-for="(trip, index) in featuredTrips">
               <v-col cols="12" md="6" lg="4" :key="index">
-                <trip-item :trip="trip"> </trip-item>
+                <trip-item :trip="trip"></trip-item>
               </v-col>
             </template>
           </v-row>
@@ -126,7 +126,7 @@
           <v-row justify="center" class="feature2-spacer">
             <template v-for="(loc, index) in featuredLocations">
               <v-col cols="6" md="6" lg="3" :key="index">
-                <featured-location :location="loc"> </featured-location>
+                <featured-location :location="loc"></featured-location>
               </v-col>
             </template>
           </v-row>
@@ -213,45 +213,10 @@
               Start Coming Soon
           ----------------------------------------------- -->
           <v-row>
-            <v-col cols="12" sm="10" md="12" lg="5" class="quick-contact">
-              <div>
-                <h4 class="font-weight-medium contact-title mt-0"> Leave us a message </h4>
-                <form>
-                  <v-row class="mt-15">
-                    <v-col cols="12" md="6" class="py-0">
-                      <v-text-field
-                        label="Name"
-                        solo
-                        v-model="customer.name"
-                        placeholder="Name"
-                      ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" md="6" class="py-0">
-                      <v-text-field
-                        label="Phone Number"
-                        solo
-                        type="phone"
-                        v-model="customer.email"
-                        placeholder="Phone number"
-                      ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" class="py-0">
-                      <v-textarea name="message" v-model="customer.note" solo label="Message" rows="3"></v-textarea>
-                    </v-col>
-                  </v-row>
-                  <v-btn
-                    nuxt
-                    to="/"
-                    class="btn-custom-md btn-danger mt-12"
-                    outlined
-                    color="white"
-                    elevation="0"
-                  >
-                    Submit
-                  </v-btn>
-                </form>
-              </div>
+            <v-col cols="12" lg="6" md="6" sm="12">
+              <Contact />
             </v-col>
+            <v-col></v-col>
           </v-row>
 
           <!-- -----------------------------------------------
@@ -276,20 +241,9 @@ import FeaturedLocation from '@/components/protrip/FeaturedLocation'
 import tourisServices from "@/services/apis/tourisServices"
 import HomeLoading from '@/components/protrip/HomeLoading'
 import {mapActions, mapState} from "vuex";
+import Contact from "~/vuetify-package/nextkit/components/custom/contact/Contact";
 
-export default {
-  head() {
-    return {
-      title: 'NuxtJs UI kit | Free UI kit built with Vuetify',
-      meta: [
-        {
-          hid: 'description',
-          name: 'Next Ui Kit',
-          content: 'Next Ui Kit is the best way',
-        },
-      ],
-    }
-  },
+export default {  
   data() {
     return {
       loading: true,
@@ -392,7 +346,7 @@ export default {
       customer: {
         name: '',
         phone: '',
-        note:''
+        note: ''
       }
     }
   },
@@ -405,11 +359,12 @@ export default {
     BannerText1: () => import('@/components/custom/banner/BannerText'),
     ComingSoon: () => import('@/components/shared/coming-soon/ComingSoon'),
     AllCustomComponents: () => import('@/components/custom/AllCustomComponents'),
+    Contact,
   },
   async mounted() {
     await this.init()
   },
-  computed:{
+  computed: {
     ...mapState('product', {
       locations: state => state.locations
     }),
@@ -424,7 +379,7 @@ export default {
   },
   methods: {
     ...mapActions('product', ['fetchAllLocations']),
-    async init(){
+    async init() {
       this.loading = true
       await Promise.all([this.fetchFeaturedTrip()])
       this.loading = false
@@ -435,7 +390,9 @@ export default {
         this.featuredTrips = result.trips
       }
     },
-   
+    onApplyFilterSearch(filter) {
+      this.$router.push({name: 'search', query: filter})
+    }
   }
 }
 </script>

@@ -42,5 +42,8 @@
   "featured_trip_label": "Our Popular Tours",
   "featured_trip_des": "choose your adventure",
   "search_result": "Search result",
-  "search_result_for": "Search result from {from} to {to}"
+  "search_result_for": "Search result from {from} to {to}",
+  "hotels": "hotels",
+  "plants": "plants",
+  "tours":"tours"
 }

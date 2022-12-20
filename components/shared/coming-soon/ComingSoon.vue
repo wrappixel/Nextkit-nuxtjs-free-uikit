@@ -17,8 +17,7 @@
             <div class="mt-16 pt-2">
               <v-btn
                 nuxt
-                large
-                to="/#"
+                large                
                 class="btn-custom-md"
                 color="white"
                 elevation="0"
