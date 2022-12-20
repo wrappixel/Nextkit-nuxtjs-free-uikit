@@ -101,7 +101,7 @@ export default {
     this.init();
   },
   methods: {
-    ...mapActions('product', ['fetchAllLocations']),
+    ...mapActions('trip', ['fetchAllLocations']),
     async init() {
       if (!this.locations || !this.locations.length) {
         const res = await this.fetchAllLocations();

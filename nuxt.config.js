@@ -100,7 +100,7 @@ export default {
   build: {},
   router: {
     base: '/',
-    middleware: ['i18n'],
+    middleware: ['i18n', 'router'],
   },
   axios: {
     baseUrl: process.env.BASE_URL,
