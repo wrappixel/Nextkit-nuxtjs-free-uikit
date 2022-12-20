@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  protrip-landing:
+    image: 'protrip-landing:1'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8001:3000'
+
+    environment:
+      ENV: prod
+    restart: always
