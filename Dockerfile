@@ -5,8 +5,8 @@ ENV APP_ROOT /src
 WORKDIR ${APP_ROOT}
 ADD . ${APP_ROOT}
 
-RUN npm install
-RUN npm run build
+RUN yarn 
+RUN yarn build
 
 EXPOSE 3000
 
