@@ -1,15 +1,15 @@
 <template>
   <v-card elevation="0" class="blog-card overflow-hidden mb-15">
     <div class="position-relative mb-10">
-      <a href="#">
-        <v-img :src="trip.img_src" alt="blog" class="blog-img" aspect-ratio="1.5" />
+      <a :href="`/trip/${trip.id}`">
+        <v-img :src="trip.img_src" alt="blog" class="blog-img" aspect-ratio="1.5" @click="goToDetail"/>
       </a>
     </div>
     <div>
       <p class="mt-2 mb-2 mini-short-des">
         {{ trip.super_short_description }}
       </p>
-      <a href="#" class="blog-title text-decoration-none font-weight-bold font-22">
+      <a :href="`/trip/${trip.id}`" class="blog-title text-decoration-none font-weight-bold font-22">
         {{ trip.title }}
       </a>
       <div class="home-trip-price font-weight-medium font-18 mt-5">
@@ -35,7 +35,7 @@
           {{ trip.price | formatPrice }} {{ currency }}
         </v-chip>
       </div>
-      <v-btn class="mt-15" outlined color="error"> Book now</v-btn>
+      <v-btn class="mt-15" outlined color="error" @click="goToDetail"> Book now</v-btn>
     </div>
   </v-card>
 </template>
@@ -84,5 +84,10 @@ export default {
       currency: 'VND',
     }
   },
+  methods: {
+    goToDetail() {
+      this.$router.push({name: 'trip-id', params: this.trip.id})
+    }
+  }
 }
 </script>

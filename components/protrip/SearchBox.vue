@@ -114,11 +114,15 @@ export default {
     fetchTour() {
       const fromName = this.locations.find((e) => {
         return e.city_code === this.filters.from
-      }).city
+      })
       const toName = this.locations.find((e) => {
         return e.city_code === this.filters.to
-      }).city
-      this.$emit("onApplyFilter", {...this.filters, from_name: fromName, to_name: toName});
+      })
+      const payload = {
+        from_name: fromName ? fromName.city : '',
+        to_name: toName ? toName.city : ''
+      }
+      this.$emit("onApplyFilter", {...this.filters, ...payload});
     },
     customFilter(item, queryText, itemText) {
       const textOne = item.city.toLowerCase();

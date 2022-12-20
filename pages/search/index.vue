@@ -24,11 +24,14 @@
           <v-row justify="left" class="mb-36">
             <v-col cols="12" sm="10" md="9" lg="7">
               <div class="text-center">
-                <h2 class="section-title font-weight-bold no-margin" v-if="filters.to_name && filters.from_name">
-                  {{$t('search_result_for', { from: filters.from_name, to: filters.to_name }) }}
+                <h2
+                  class="section-title font-weight-bold no-margin"
+                  v-if="filters.to_name && filters.from_name"
+                >
+                  {{ $t('search_result_for', { from: filters.from_name, to: filters.to_name }) }}
                 </h2>
                 <h2 class="section-title font-weight-bold no-margin" v-else>
-                  {{$t('search_result') }}
+                  {{ $t('search_result') }}
                 </h2>
               </div>
             </v-col>
@@ -85,7 +88,13 @@
                       ></v-text-field>
                     </v-col>
                     <v-col cols="12" class="py-0">
-                      <v-textarea name="message" v-model="customer.note" solo label="Message" rows="3"></v-textarea>
+                      <v-textarea
+                        name="message"
+                        v-model="customer.note"
+                        solo
+                        label="Message"
+                        rows="3"
+                      ></v-textarea>
                     </v-col>
                   </v-row>
                   <v-btn
@@ -112,71 +121,53 @@
       ./ Coming Soon
       ----------------------------------------------- -->
     </template>
-
-
   </div>
 </template>
 <script>
 import Banner from '@/components/protrip/Banner'
-import tourisServices from "@/services/apis/tourisServices"
+import tourisServices from '@/services/apis/tourisServices'
 import TripItem from '@/components/protrip/TripItem'
 import HomeLoading from '@/components/protrip/HomeLoading'
 export default {
-  head() {
-    return {
-      title: 'NuxtJs UI kit | Free UI kit built with Vuetify',
-      meta: [
-        {
-          hid: 'description',
-          name: 'Next Ui Kit',
-          content: 'Next Ui Kit is the best way',
-        },
-      ],
-    }
-  },
   data() {
     return {
-      loading: false,
+      loading: true,
       trips: [],
       filters: {},
       customer: {
         name: '',
         phone: '',
-        note:''
-      }
-    };
+        note: '',
+      },
+    }
   },
   computed: {},
-  components: {Banner, TripItem, HomeLoading},
+  components: { Banner, TripItem, HomeLoading },
   async mounted() {
-   await this.init();
+    await this.init()
   },
   methods: {
     async init() {
-      this.filters = this.$route.query;
+      this.filters = this.$route.query
       await this.search(this.filters)
     },
     goToDetail(id) {
-      this.$router.push({ path: `/home/${id}` });
+      this.$router.push({ path: `/home/${id}` })
     },
     async search(payload) {
       this.loading = true
       if (payload && payload.from && payload.to) {
         this.filters.from_name = payload.from_name
         this.filters.to_name = payload.to_name
-        const url = `${this.$route.path}?from=${encodeURIComponent(payload.from)}&to=${encodeURIComponent(payload.to)}`
-        history.pushState(
-          {},
-          null,
-          url,
-        )
-
+        const url = `${this.$route.path}?from=${encodeURIComponent(
+          payload.from
+        )}&to=${encodeURIComponent(payload.to)}`
+        history.pushState({}, null, url)
       }
-      console.log(this.$router.query)
       const res = await tourisServices.fetchListAllTours({
         location_from: payload && payload.from ? payload.from : '',
         location_to: payload && payload.to ? payload.to : '',
-      });
+      })
       if (res && res.success && res.trips) {
         this.trips = res.trips
       }
@@ -184,8 +175,8 @@ export default {
     },
     locationName(code) {
       const loc = this.lo
-    }
+    },
   },
-};
+}
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-wrapper" style="background-color:#3252a2">
+  <div class="bg-danger-grediant coming-soon__banner-wrapper" style="">
     <v-container>
       <!-- -----------------------------------------------
             Start Banner
