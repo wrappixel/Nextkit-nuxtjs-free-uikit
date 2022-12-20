@@ -45,5 +45,6 @@
   "search_result_for": "Search result from {from} to {to}",
   "hotels": "hotels",
   "plants": "plants",
-  "tours":"tours"
+  "tours":"tours",
+  "where_do_you_want_to_go":"Where do you want to go?"
 }

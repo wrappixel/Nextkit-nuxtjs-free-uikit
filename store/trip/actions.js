@@ -1,5 +1,5 @@
 import tourisServices from "~/services/apis/tourisServices";
-import {SET_PRODUCT, SET_PRODUCTS} from "~/store/trip/constant";
+import {SET_PRODUCT, SET_PRODUCTS,SET_LOCATIONS} from "~/store/trip/constant";
 
 export default {
   async fetchDetailTrip({commit}, payload) {

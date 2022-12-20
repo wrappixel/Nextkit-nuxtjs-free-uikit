@@ -9,7 +9,7 @@
         <v-col cols="12" md="8" lg="6" class="d-flex align-center justify-center banner-text">
           <div class="text-center text-md-left">
             <!-- < class="banner-title font-weight-bold white--text "> -->
-          <vue-typed-js :strings="['Where do you want to go?']" :loop="true"
+          <vue-typed-js :strings="[$t('where_do_you_want_to_go')]" :loop="true"
             :smartBackspace='true'
             :typeSpeed='120'
             :backSpeed='20'

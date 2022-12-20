@@ -16,8 +16,9 @@ export default {
       const promise = [this.signInWithDealer({ code: code })]
 
       const [dealer] = await Promise.all(promise)
+      console.log(dealer)
       if (dealer.success) {
-        this.$router.push({ name: 'new-home' })
+        this.$router.push({ name: 'index' })
       }
     },
   },
