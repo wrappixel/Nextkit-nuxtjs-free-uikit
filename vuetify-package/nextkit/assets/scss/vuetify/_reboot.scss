@@ -217,3 +217,11 @@ h6 {
   background: -webkit-linear-gradient(left, $danger, $orange);
   background: linear-gradient(90deg, $danger 0, $orange);
 }
+
+.text--white {
+  color: $grey-100;
+}
+
+.black--text {
+  color: $gray-500;
+}

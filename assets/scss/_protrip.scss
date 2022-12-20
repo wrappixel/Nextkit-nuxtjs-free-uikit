@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Satisfy';
+  src: url(../font/Satisfy-Regular.ttf) format('truetype');
+}
+.no-margin {
+  margin: 0;
+}
+.section-sub-title {
+  font-size: 25px;
+  color: #003580;
+  line-height: 1;
+  text-align: center;
+  font-family: Satisfy;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.protrip-banner {
+  img {
+    width: auto;
+    min-width: 100%;
+    position: absolute;
+    height: 700px;
+  }
+  .banner-text {
+    z-index: 1;
+  }
+  .banner-title {
+  }
+}
+
+.search-box {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 20px;
+  height: auto;
+
+  .search-title {
+    font-size: x-large;
+    font-weight: bolder;
+  }
+
+  .v-input__slot::before {
+    border: none !important;
+  }
+  .v-input__icon {
+    display: none;
+  }
+  .v-autocomplete__content {
+    border-radius: 12px !important;
+  }
+  .icon-bold {
+    color: #3a404d;
+  }
+  .v-text-field__details {
+    display: none;
+  }
+  .wall {
+    border-left: 1px groove #a2a2a266;
+    // border-style: groove;
+    height: 70%;
+  }
+  .wall-container {
+    height: 100px;
+  }
+
+  .v-input input {
+    font-size: 14px;
+  }
+
+  .search-btn btn {
+    width: 100%;
+  }
+  .v-btn:not(.v-btn--round).v-size--large {
+    min-width: 0px;
+  }
+
+  @media (min-width: 1000px) {
+    .search-btn {
+      margin-left: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wall-container {
+      display: none;
+      width: 10px;
+    }
+  }
+}
+
+.mini-short-des {
+  font-size: 14px;
+}
+
+.text-line {
+  text-decoration: line-through;
+}
+
+.h100 {
+  height: 100%;
+}
+.featured-location {
+  .v-responsive__content {
+    height: 100%;
+    position: relative;
+  }
+  .v-responsive__content:hover {
+    background-color: rgba(26, 139, 243, 0.87);
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .feat-title {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px !important;
+    z-index: 10;
+  }
+  .v-application .title {
+    font-size: 20px !important;
+  }
+}
+
+.quick-contact {
+  h4 {
+    color: white;
+  }
+  color: white;
+}

@@ -1,9 +1,11 @@
 <template>
   <div class="logo">
-    <NLink to="/">
+    <NLink to="/new-home">
       <v-img
-        :src="require('@/assets/images/logos/white-text.png')"
+        :src="require('@/assets/images/logos/logo.png')"
         alt="logo"
+        width="300"
+        height="100"
       />
     </NLink>
   </div>

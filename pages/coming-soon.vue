@@ -1,10 +1,14 @@
 <template>
   <v-main>
     <Banner />
+    <v-container>
+      <contact />
+    </v-container>
   </v-main>
 </template>
 
 <script>
+import Contact from "@/vuetify-package/nextkit/components/custom/contact/Contact";
 export default {
   layout: "coming-soon",
   props: {
@@ -14,6 +18,7 @@ export default {
     }
   },
   components: {
+    Contact,
     Banner: () => import("@/components/shared/lp-banner/BannerComingSoon")
   },
   data() {

@@ -31,5 +31,20 @@
   "email_invalid": "Wrong email format",
   "phone_invalid": "Wrong phone number format",
   "merchant_form": "Merchant form",
-  "merchant_description": ""
+  "merchant_description": "",
+  "from_price": "from",
+  "phone_number": "Phone number",
+  "language": "language",
+  "send_dealer_code": "Send code",
+  "email_field": "Email",
+  "submit": "submit",
+  "contact_information": "Contact information",
+  "featured_trip_label": "Our Popular Tours",
+  "featured_trip_des": "choose your adventure",
+  "search_result": "Search result",
+  "search_result_for": "Search result from {from} to {to}",
+  "hotels": "hotels",
+  "plants": "plants",
+  "tours":"tours",
+  "where_do_you_want_to_go":"Where do you want to go?"
 }

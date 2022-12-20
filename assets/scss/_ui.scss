@@ -1,0 +1,108 @@
+// Padding & Margin
+$px: 0 4 8 10 12 16 24 32 36 40 48 64 72 80 96;
+$x-px: -16 0 4 8 10 12 16 24 32 36 40 48 64 72 80 96;
+$y-px: -16 0 4 8 10 12 16 24 32 36 40 48 64 72 80 96;
+$top-px: 0 2 4 6 8 10 12 16 24 32 36 40 48 56 64 72 80 96;
+$bottom-px: -24 0 2 4 6 8 10 12 16 24 32 36 40 48 64 72 80 96;
+$left-px: -5 -4 0 4 5 8 10 12 14 16 20 24 32 36 40 48 64 72 80 96;
+$right-px: -4 0 4 8 10 12 16 20 24 32 36 40 48 64 72 80 96;
+
+// Generators
+@mixin padding-margin {
+  @each $i in $px {
+    .p-#{$i} {
+      padding: #{$i}px;
+    }
+    .m-#{$i} {
+      margin: #{$i}px;
+    }
+  }
+  @each $i in $x-px {
+    .px-#{$i} {
+      padding-left: #{$i}px;
+      padding-right: #{$i}px;
+    }
+    .mx-#{$i} {
+      margin-left: #{$i}px;
+      margin-right: #{$i}px;
+    }
+  }
+  @each $i in $y-px {
+    .py-#{$i} {
+      padding-top: #{$i}px;
+      padding-bottom: #{$i}px;
+    }
+    .my-#{$i} {
+      margin-top: #{$i}px;
+      margin-bottom: #{$i}px;
+    }
+  }
+  @each $i in $top-px {
+    .pt-#{$i} {
+      padding-top: #{$i}px;
+    }
+    .mt-#{$i} {
+      margin-top: #{$i}px;
+    }
+    .mti-#{$i} {
+      margin-top: #{$i}px !important;
+    }
+  }
+  @each $i in $bottom-px {
+    .pb-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+  }
+  @each $i in $right-px {
+    .pr-#{$i} {
+      padding-right: #{$i}px;
+    }
+    .mr-#{$i} {
+      margin-right: #{$i}px;
+    }
+  }
+  @each $i in $left-px {
+    .pl-#{$i} {
+      padding-left: #{$i}px;
+    }
+    .ml-#{$i} {
+      margin-left: #{$i}px;
+    }
+  }
+}
+
+.s-m-auto {
+  margin: auto;
+}
+@include padding-margin;
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.f-1 {
+  flex: 1 !important;
+}
+.f-2 {
+  flex: 2 !important;
+}
+
+.f-3 {
+  flex: 3 !important;
+}

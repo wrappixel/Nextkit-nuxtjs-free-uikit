@@ -34,5 +34,20 @@
   "email_invalid": "Sai định dạng email",
   "phone_invalid": "Sai định dạng số điện thoại",
   "merchant_form": "Thông tin của đại lý",
-  "merchant_description": ""
+  "merchant_description": "merchant",
+  "language": "ngôn ngữ",
+  "send_dealer_code": "gửi mã đại lý",
+  "email_field": "Email",
+  "submit": "xác nhận",
+  "from_price": "giá chỉ từ",
+  "contact_information": "thông tin liên hệ",
+  "save": "lưu",
+  "featured_trip_label": "Combo nổi bật",
+  "featured_trip_des": "lựa chọn cho hành trình của bạn",
+  "search_result_for": "Kết quả tìm kiếm từ {from} đến {to}",
+  "search_result":"Kết quả tìm kiếm",
+  "hotels": "khách sạn",
+  "plants": "chuyến bay",
+  "tours":"tours",
+  "where_do_you_want_to_go":"Bạn muốn đi đâu?"
 }

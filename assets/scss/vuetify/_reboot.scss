@@ -110,6 +110,13 @@ h6 {
   padding: 0 !important;
 }
 
+.font-36 {
+  font-size: 36px;
+}
+.font-22 {
+  font-size: 22px;
+}
+
 .font-18 {
   font-size: 18px;
 }
@@ -184,36 +191,16 @@ h6 {
 
 .bg-info-grediant {
   background: $primary;
-  background: -webkit-linear-gradient(
-    legacy-direction(to right),
-    $primary,
-    $accent
-  );
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from($primary),
-    to($accent)
-  );
+  background: -webkit-linear-gradient(legacy-direction(to right), $primary, $accent);
+  background: -webkit-gradient(linear, left top, right top, from($primary), to($accent));
   background: -webkit-linear-gradient(left, $primary, $accent);
   background: linear-gradient(90deg, $primary 0, $accent);
 }
 
 .bg-danger-grediant {
   background: $danger;
-  background: -webkit-linear-gradient(
-    legacy-direction(to right),
-    $danger,
-    $orange
-  );
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from($danger),
-    to($orange)
-  );
+  background: -webkit-linear-gradient(legacy-direction(to right), $danger, $orange);
+  background: -webkit-gradient(linear, left top, right top, from($danger), to($orange));
   background: -webkit-linear-gradient(left, $danger, $orange);
   background: linear-gradient(90deg, $danger 0, $orange);
 }

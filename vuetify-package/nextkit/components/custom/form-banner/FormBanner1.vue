@@ -19,8 +19,9 @@
                 <form>
                   <div class="stylish-input-group">
                     <v-text-field
-                      placeholder="Enter Email Address"
+                      placeholder="Enter Dealer Code"
                       solo
+                      v-model="dealer_code"
                     ></v-text-field>
                     <v-btn
                       rounded
@@ -28,8 +29,9 @@
                       elevation="0"
                       class="text-uppercase font-weight-medium"
                       dark
+                      @click="onSubmitForm"
                     >
-                      Get Started
+                      {{$t('submit')}}
                     </v-btn>
                   </div>
                 </form>
@@ -38,7 +40,7 @@
           </v-col>
           <v-col cols="12" md="5" lg="6" class="ml-auto">
             <v-img
-              :src="require('@/assets/images/form-banner/form-banner1.png')"
+              :src="require('@/assets/images/team/travel-staff.jpeg')"
               alt="banner"
             />
           </v-col>
@@ -55,8 +57,14 @@
 export default {
   name: "FormBanner1",
   data() {
-    return {};
+    return {
+      dealer_code: ''
+    };
   },
-  methods: {},
+  methods: {
+    onSubmitForm() {
+      this.$emit('submit', this.dealer_code)
+    }
+  },
 };
 </script>
