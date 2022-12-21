@@ -9,6 +9,7 @@ ADD . ${APP_ROOT}
 
 RUN yarn 
 RUN yarn build
+RUN yarn generate
 
 EXPOSE 3000
 
