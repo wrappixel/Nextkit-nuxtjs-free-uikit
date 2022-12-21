@@ -111,8 +111,8 @@
             <v-col cols="12" md="10" lg="7">
               <div class="text-center">
                 <h2 class="font-36"><i class="mdi mdi-star-outline"></i></h2>
-                <h2 class="section-title font-weight-bold no-margin"> Our Popular Tours </h2>
-                <p class="section-sub-title">choose your adventure</p>
+                <h2 class="section-title font-weight-bold no-margin"> {{ $t('featured_city_label') }} </h2>
+                <p class="section-sub-title">{{ $t('featured_city_desc') }}</p>
               </div>
             </v-col>
           </v-row>
@@ -175,6 +175,7 @@
                   </div>
                   <h5 class="font-weight-medium font-18">Instant Solutions</h5>
                   <p class="mt-10 mb-8">
+                  <p class="mt-10 mb-8">
                     You can relay on our amazing features list and also our
                     customer services will be great experience. Lorem ipsum dolor
                     sit amet, consectetur adipiscing elit. Praesent tristique
@@ -214,7 +215,7 @@
           ----------------------------------------------- -->
           <v-row>
             <v-col cols="12" lg="6" md="6" sm="12">
-              <Contact />
+              <Contact :outline="false" :solo="true" />
             </v-col>
             <v-col></v-col>
           </v-row>
@@ -243,7 +244,7 @@ import HomeLoading from '@/components/protrip/HomeLoading'
 import {mapActions, mapState} from "vuex";
 import Contact from "~/vuetify-package/nextkit/components/custom/contact/Contact";
 
-export default {  
+export default {
   data() {
     return {
       loading: true,
@@ -365,7 +366,7 @@ export default {
     await this.init()
   },
   computed: {
-    ...mapState('product', {
+    ...mapState('trip', {
       locations: state => state.locations
     }),
     featuredLocations() {
@@ -378,10 +379,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions('product', ['fetchAllLocations']),
+    ...mapActions('trip', ['fetchAllLocations']),
     async init() {
       this.loading = true
-      await Promise.all([this.fetchFeaturedTrip()])
+      await Promise.all([this.fetchFeaturedTrip(), this.fetchAllLocations()])
       this.loading = false
     },
     async fetchFeaturedTrip() {
