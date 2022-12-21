@@ -15,7 +15,8 @@
                 <v-col cols="12" md="6" class="py-0">
                   <v-text-field
                     :label="$t('full_name')"
-                    outlined
+                    :outlined="outline"
+                    :solo="solo"
                     v-model="name"
                     placeholder="Name"
                     :rules="rules.name"
@@ -23,7 +24,8 @@
                 </v-col>
                 <v-col cols="12" md="6" class="py-0">
                   <v-text-field
-                    outlined
+                    :outlined="outline"
+                    :solo="solo"
                     type="email"
                     v-model="email"
                     :label="$t('email_field')"
@@ -34,7 +36,8 @@
                 <v-col cols="12" class="py-0">
                   <v-text-field
                     :rules="rules.phone"
-                    outlined
+                    :outlined="outline"
+                    :solo="solo"
                     v-model="phoneNumber"
                     :label="$t('phone_number')"
                     :placeholder="$t('phone_number')"
@@ -43,7 +46,8 @@
                 <v-col cols="12" class="py-0">
                   <v-textarea
                     name="notes"
-                    outlined
+                    :outlined="outline"
+                    :solo="solo"
                     :label="$t('note')"
                     rows="3"
                     v-model="notes"
@@ -75,6 +79,16 @@ import {validatePhoneNumber} from "~/core/utils/phone";
 
 export default {
   name: "Contact",
+  props: {
+    outline: {
+      type: Boolean,
+      default: true
+    },
+    solo: {
+      type: Boolean,
+      default: false
+    },
+  },
   data() {
     return {
       name: "",
@@ -90,8 +104,8 @@ export default {
           v => !!v || this.$t('email_required'),
         ],
         phone: [
-          v => !!v || this.$t('phone_required'),
-          v => !!v && validatePhoneNumber(v)
+          v => !!v || this.$t('phone_required')
+          // v => !!v && validatePhoneNumber(v)
         ],
       }
     };
