@@ -1,4 +1,4 @@
-FROM node:14-alpine 
+FROM node:14
 
 ENV APP_ROOT /src
 
@@ -12,7 +12,4 @@ RUN yarn build
 
 EXPOSE 3000
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
-
-CMD [ "npm", "start" ]
+ENV HOST 0.0.0.0

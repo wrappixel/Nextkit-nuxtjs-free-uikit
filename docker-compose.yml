@@ -1,13 +1,25 @@
-version: '3.5'
+version: '3'
+
 services:
   protrip-landing:
-    image: 'protrip-landing:1'
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '8001:3000'
-
-    environment:
-      ENV: prod
+    build: .
+    container_name: protrip-landing
     restart: always
+    command: 'yarn run start'
+    networks:
+      - flat-network
+
+  nginx:
+    image: nginx:1.17
+    container_name: nginx
+    ports:
+      - '8001:80'
+    volumes:
+      - .nginx:/etc/nginx/conf.d
+    depends_on:
+      - nuxt
+    networks:
+      - flat-network
+
+networks:
+  flat-network:
