@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  protrip-landing:
+    build: .
+    container_name: protrip-landing
+    restart: always
+    command: 'yarn run start'
+    networks:
+      - flat-network
+
+  nginx-landing:
+    image: nginx:1.17
+    container_name: nginx-landing
+    ports:
+      - '8001:80'
+    volumes:
+      - .nginx:/etc/nginx/conf.d
+    depends_on:
+      - protrip-landing
+    networks:
+      - flat-network
+
+networks:
+  flat-network:
