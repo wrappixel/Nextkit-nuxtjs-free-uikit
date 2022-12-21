@@ -26,11 +26,16 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.META_URL,
+        content: process.env.BASE_DOMAIN,
       },
       {
         hid: 'og:description',
-        property: 'og:url',
+        property: 'og:description',
+        content: process.env.META_DESCRIPTION,
+      },
+      {
+        hid: 'og:img',
+        property: 'og:img',
         content: process.env.META_DESCRIPTION,
       },
       {
@@ -41,7 +46,7 @@ export default {
       {
         hid: 'url',
         property: 'url',
-        content: process.env.META_URL,
+        content: process.env.BASE_DOMAIN,
       },
       {
         hid: 'description',

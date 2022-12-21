@@ -106,6 +106,16 @@ export default {
             : this.$data.productDetail.short_description,
         },
         {
+          hid: 'og:img',
+          name: 'og:img',
+          content: this.$data.productDetail.img_src,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: `${process.env.BASE_DOMAIN}/handle/${this.$data.productDetail.handle}`,
+        },
+        {
           hid: 'title',
           name: 'title',
           content: this.$data.productDetail.seo_title
@@ -118,6 +128,16 @@ export default {
           content: this.$data.productDetail.seo_title
             ? this.$data.productDetail.seo_title
             : this.$data.productDetail.title,
+        },
+        {
+          hid: 'img',
+          name: 'img',
+          content: this.$data.productDetail.img_src,
+        },
+        {
+          hid: 'url',
+          name: 'url',
+          content: `${process.env.BASE_DOMAIN}/handle/${this.$data.productDetail.handle}`,
         },
       ],
     }
@@ -147,8 +167,8 @@ export default {
       fetchDetailTrip: 'fetchDetailTrip',
     }),
     async init() {
-      const id = this.$route.params.id
-      const promise = [this.fetchDetailTrip({ id: id })]
+      const handle = this.$route.params.handle
+      const promise = [this.fetchDetailTrip({ handle: handle })]
       const [trip] = await Promise.all(promise)
       this.productDetail = cloneDeep({ ...trip, ...trip.trip })
       this.isLoading = false
