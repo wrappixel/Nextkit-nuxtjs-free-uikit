@@ -48,5 +48,7 @@
   "hotels": "hotels",
   "plants": "plants",
   "tours":"tours",
-  "where_do_you_want_to_go":"Where do you want to go?"
+  "where_do_you_want_to_go":"Where do you want to go?",
+  "phone_incorrect":"wrong telephone number format",
+  "coming_soon_description":"We are developing this site. Thank you for using the product. We will launch soon"
 }

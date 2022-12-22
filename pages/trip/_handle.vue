@@ -1,10 +1,10 @@
 <template>
   <div class="product-detail">
     <v-container>
-      <template v-if="isLoading">
+      <div v-show="isLoading">
         <v-skeleton-loader type="article, actions"></v-skeleton-loader>
-      </template>
-      <template v-else>
+      </div>
+      <div v-show="!isLoading">
         <v-row>
           <v-col lg="8" md="8" sm="12">
             <!--    Carousel    -->
@@ -36,7 +36,7 @@
                 <div class="d-flex align-center">
                   <p class="text-capitalize mr-8 my-0">{{ $t('from_price') }}:</p>
                   <p
-                    v-if="productDetail.compare_at_price !== productDetail.price"
+                    v-show="productDetail.compare_at_price !== productDetail.price"
                     class="mr-4 text--strike-through my-0"
                     >{{ productDetail.compare_at_price | formatPrice }}</p
                   >
@@ -52,7 +52,7 @@
                 ></v-rating>
               </div>
 
-              <div class="d-flex product-price" v-if="productDetail.short_description">
+              <div class="d-flex product-price" v-show="productDetail.short_description">
                 <p class="black--text">{{ productDetail.short_description }}</p>
               </div>
               <!--    Button register tour        -->
@@ -73,7 +73,7 @@
 
         <!--     Form contact     -->
         <Contact id="contact-form" />
-      </template>
+      </div>
     </v-container>
   </div>
 </template>

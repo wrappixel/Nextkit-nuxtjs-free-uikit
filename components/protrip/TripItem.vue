@@ -29,7 +29,7 @@
           color="error"
           label
           text-color="white"
-          v-if="hasCompareAtPrice"
+          v-show="hasCompareAtPrice"
         >
           <v-icon left> mdi-label</v-icon>
           {{ trip.price | formatPrice }} {{ currency }}

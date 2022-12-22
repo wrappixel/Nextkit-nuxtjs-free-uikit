@@ -4,7 +4,7 @@
       class="white--text align-end"
       height="300px"
       :src="location.img_src"
-      aspect-ratio="0.6666"
+      aspect-ratio="0.6666"      
     >
       <v-card-title class="feat-title"> {{location.city}} </v-card-title>
     </v-img>

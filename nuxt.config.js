@@ -36,7 +36,7 @@ export default {
       {
         hid: 'og:img',
         property: 'og:img',
-        content: process.env.META_DESCRIPTION,
+        content: '/logo.png',
       },
       {
         hid: 'title',
@@ -52,6 +52,11 @@ export default {
         hid: 'description',
         property: 'url',
         content: process.env.META_DESCRIPTION,
+      },
+      {
+        hid: 'img',
+        property: 'img',
+        content: '/logo.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }],
