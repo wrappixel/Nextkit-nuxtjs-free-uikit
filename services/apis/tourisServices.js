@@ -12,8 +12,8 @@ export default {
     return service.post(`/api/booking`, payload)
   },
   getDetailTour(payload) {
-    if (payload.id) {
-      return service.get(`/api/trip/${payload.id}`)
+    if (payload.handle) {
+      return service.get(`/api/trip/${payload.handle}`)
     }
   },
   fetchListFeatured() {

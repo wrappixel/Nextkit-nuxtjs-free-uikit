@@ -23,19 +23,19 @@
       <!-- -----------------------------------------------
           Start Blog
       ----------------------------------------------- -->
-      <template v-if="isLoading">
+      <div v-show="isLoading">
         <v-skeleton-loader
           v-bind="attrs"
           type="article, actions"
         ></v-skeleton-loader>
-      </template>
-      <template v-else>
+      </div>
+      <div v-show="!isLoading">
         <v-row class="mt-13" justify="center">
           <v-col cols="12" md="6" lg="4" v-for="trip in trips" :key="trip.id">
             <trip-item :trip="trip" />
           </v-col>
         </v-row>
-      </template>
+      </div>
 
       <!-- -----------------------------------------------
           End Blog

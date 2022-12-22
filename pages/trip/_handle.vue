@@ -1,10 +1,10 @@
 <template>
   <div class="product-detail">
     <v-container>
-      <template v-if="isLoading">
+      <div v-show="isLoading">
         <v-skeleton-loader type="article, actions"></v-skeleton-loader>
-      </template>
-      <template v-else>
+      </div>
+      <div v-show="!isLoading">
         <v-row>
           <v-col lg="8" md="8" sm="12">
             <!--    Carousel    -->
@@ -36,7 +36,7 @@
                 <div class="d-flex align-center">
                   <p class="text-capitalize mr-8 my-0">{{ $t('from_price') }}:</p>
                   <p
-                    v-if="productDetail.compare_at_price !== productDetail.price"
+                    v-show="productDetail.compare_at_price !== productDetail.price"
                     class="mr-4 text--strike-through my-0"
                     >{{ productDetail.compare_at_price | formatPrice }}</p
                   >
@@ -52,7 +52,7 @@
                 ></v-rating>
               </div>
 
-              <div class="d-flex product-price" v-if="productDetail.short_description">
+              <div class="d-flex product-price" v-show="productDetail.short_description">
                 <p class="black--text">{{ productDetail.short_description }}</p>
               </div>
               <!--    Button register tour        -->
@@ -73,7 +73,7 @@
 
         <!--     Form contact     -->
         <Contact id="contact-form" />
-      </template>
+      </div>
     </v-container>
   </div>
 </template>
@@ -106,6 +106,16 @@ export default {
             : this.$data.productDetail.short_description,
         },
         {
+          hid: 'og:img',
+          name: 'og:img',
+          content: this.$data.productDetail.img_src,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: `${process.env.BASE_DOMAIN}/handle/${this.$data.productDetail.handle}`,
+        },
+        {
           hid: 'title',
           name: 'title',
           content: this.$data.productDetail.seo_title
@@ -118,6 +128,16 @@ export default {
           content: this.$data.productDetail.seo_title
             ? this.$data.productDetail.seo_title
             : this.$data.productDetail.title,
+        },
+        {
+          hid: 'img',
+          name: 'img',
+          content: this.$data.productDetail.img_src,
+        },
+        {
+          hid: 'url',
+          name: 'url',
+          content: `${process.env.BASE_DOMAIN}/handle/${this.$data.productDetail.handle}`,
         },
       ],
     }
@@ -147,8 +167,8 @@ export default {
       fetchDetailTrip: 'fetchDetailTrip',
     }),
     async init() {
-      const id = this.$route.params.id
-      const promise = [this.fetchDetailTrip({ id: id })]
+      const handle = this.$route.params.handle
+      const promise = [this.fetchDetailTrip({ handle: handle })]
       const [trip] = await Promise.all(promise)
       this.productDetail = cloneDeep({ ...trip, ...trip.trip })
       this.isLoading = false

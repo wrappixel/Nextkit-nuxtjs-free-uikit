@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0" class="blog-card overflow-hidden mb-15">
     <div class="position-relative mb-10">
-      <a :href="`/trip/${trip.id}`">
+      <a :href="`/trip/${trip.handle}`">
         <v-img :src="trip.img_src" alt="blog" class="blog-img" aspect-ratio="1.5" @click="goToDetail"/>
       </a>
     </div>
@@ -9,7 +9,7 @@
       <p class="mt-2 mb-2 mini-short-des">
         {{ trip.super_short_description }}
       </p>
-      <a :href="`/trip/${trip.id}`" class="blog-title text-decoration-none font-weight-bold font-22">
+      <a :href="`/trip/${trip.handle}`" class="blog-title text-decoration-none font-weight-bold font-22">
         {{ trip.title }}
       </a>
       <div class="home-trip-price font-weight-medium font-18 mt-5">
@@ -29,7 +29,7 @@
           color="error"
           label
           text-color="white"
-          v-if="hasCompareAtPrice"
+          v-show="hasCompareAtPrice"
         >
           <v-icon left> mdi-label</v-icon>
           {{ trip.price | formatPrice }} {{ currency }}
@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     goToDetail() {
-      this.$router.push({name: 'trip-id', params: this.trip.id})
+      this.$router.push({name: 'trip-handle', params: this.trip.handle})
     }
   }
 }
