@@ -4,8 +4,9 @@
       <v-img
         :src="require('@/assets/images/logos/logo.png')"
         alt="logo"
-        width="300"
+        width="150"
         height="100"
+        contain
       />
     </NLink>
   </div>

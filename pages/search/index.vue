@@ -10,12 +10,12 @@
     <!-- -----------------------------------------------
     Top Featured
     ----------------------------------------------- -->
-    <template v-if="loading">
+    <div v-show="loading">
       <div class="blog-component mini-spacer mt-36">
         <HomeLoading />
       </div>
-    </template>
-    <template v-else>
+    </div>
+    <div v-show="!loading">
       <div class="blog-component mini-spacer mt-36">
         <v-container>
           <!-- -----------------------------------------------
@@ -23,14 +23,14 @@
           ----------------------------------------------- -->
           <v-row justify="left" class="mb-36">
             <v-col cols="12" sm="10" md="9" lg="7">
-              <div class="text-center">
+              <div class="text-left">
                 <h2
                   class="section-title font-weight-bold no-margin"
-                  v-if="filters.to_name && filters.from_name"
+                  v-show="filters.to_name && filters.from_name"
                 >
                   {{ $t('search_result_for', { from: filters.from_name, to: filters.to_name }) }}
                 </h2>
-                <h2 class="section-title font-weight-bold no-margin" v-else>
+                <h2 class="section-title font-weight-bold no-margin" v-show="!filters.to_name && !filters.from_name">
                   {{ $t('search_result') }}
                 </h2>
               </div>
@@ -120,7 +120,7 @@
       <!-- -----------------------------------------------
       ./ Coming Soon
       ----------------------------------------------- -->
-    </template>
+    </div>
   </div>
 </template>
 <script>

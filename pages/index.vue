@@ -3,19 +3,19 @@
     <!-- -----------------------------------------------
     Banner
     ----------------------------------------------- -->
-    <Banner @search="onApplyFilterSearch"/>
+    <Banner @search="onApplyFilterSearch" />
     <!--  -----------------------------------------------
     ./ Banner
     ----------------------------------------------- -->
     <!-- -----------------------------------------------
     Top Featured
     ----------------------------------------------- -->
-    <template v-if="loading">
+    <div v-show="loading">
       <div class="blog-component mini-spacer mt-36">
-        <HomeLoading/>
+        <HomeLoading />
       </div>
-    </template>
-    <template v-else>
+    </div>
+    <div v-show="!loading">
       <div class="blog-component mini-spacer mt-36">
         <v-container>
           <!-- -----------------------------------------------
@@ -25,7 +25,9 @@
             <v-col cols="12" sm="10" md="9" lg="7">
               <div class="text-center">
                 <h2 class="font-36"><i class="mdi mdi-heart-outline"></i></h2>
-                <h2 class="section-title font-weight-bold no-margin"> {{ $t('featured_trip_label') }} </h2>
+                <h2 class="section-title font-weight-bold no-margin">
+                  {{ $t('featured_trip_label') }}
+                </h2>
                 <p class="section-sub-title">{{ $t('featured_trip_des') }}</p>
               </div>
             </v-col>
@@ -75,9 +77,8 @@
                       The New way of Making Your Website in mins
                     </h3>
                     <p>
-                      You can relay on our amazing features list and also our
-                      customer services will be great experience. You will love it
-                      for sure.
+                      You can relay on our amazing features list and also our customer services will
+                      be great experience. You will love it for sure.
                     </p>
                     <v-btn
                       color="error"
@@ -111,7 +112,9 @@
             <v-col cols="12" md="10" lg="7">
               <div class="text-center">
                 <h2 class="font-36"><i class="mdi mdi-star-outline"></i></h2>
-                <h2 class="section-title font-weight-bold no-margin"> {{ $t('featured_city_label') }} </h2>
+                <h2 class="section-title font-weight-bold no-margin">
+                  {{ $t('featured_city_label') }}
+                </h2>
                 <p class="section-sub-title">{{ $t('featured_city_desc') }}</p>
               </div>
             </v-col>
@@ -125,7 +128,7 @@
           ----------------------------------------------- -->
           <v-row justify="center" class="feature2-spacer">
             <template v-for="(loc, index) in featuredLocations">
-              <v-col cols="6" md="6" lg="3" :key="index">
+              <v-col cols="6" md="6" lg="3" :key="index" @click="goToFeaturedLocations(loc)">
                 <featured-location :location="loc"></featured-location>
               </v-col>
             </template>
@@ -152,9 +155,8 @@
                   Awesome with Extra Ordinary Flexibility
                 </h2>
                 <p>
-                  You can relay on our amazing features list and also our customer
-                  services will be great experience for you without doubt and in
-                  no-time
+                  You can relay on our amazing features list and also our customer services will be
+                  great experience for you without doubt and in no-time
                 </p>
               </div>
             </v-col>
@@ -174,12 +176,11 @@
                     <i class="mdi mdi-star"></i>
                   </div>
                   <h5 class="font-weight-medium font-18">Instant Solutions</h5>
-                  <p class="mt-10 mb-8">
-                  <p class="mt-10 mb-8">
-                    You can relay on our amazing features list and also our
-                    customer services will be great experience. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Praesent tristique
-                    pellentesque ipsum.
+                  <p class="mt-10 mb-8"> </p
+                  ><p class="mt-10 mb-8">
+                    You can relay on our amazing features list and also our customer services will
+                    be great experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent tristique pellentesque ipsum.
                   </p>
                 </v-card-text>
               </v-card>
@@ -192,10 +193,9 @@
                   </div>
                   <h5 class="font-weight-medium font-18">Powerful Techniques</h5>
                   <p class="mt-10 mb-8">
-                    You can relay on our amazing features list and also our
-                    customer services will be great experience. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Praesent tristique
-                    pellentesque ipsum.
+                    You can relay on our amazing features list and also our customer services will
+                    be great experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent tristique pellentesque ipsum.
                   </p>
                 </v-card-text>
               </v-card>
@@ -228,9 +228,7 @@
       <!-- -----------------------------------------------
       ./ Coming Soon
       ----------------------------------------------- -->
-    </template>
-
-
+    </div>
   </div>
 </template>
 
@@ -239,10 +237,10 @@ import Banner from '@/components/protrip/Banner'
 import BannerText from '@/components/protrip/BannerText'
 import TripItem from '@/components/protrip/TripItem'
 import FeaturedLocation from '@/components/protrip/FeaturedLocation'
-import tourisServices from "@/services/apis/tourisServices"
+import tourisServices from '@/services/apis/tourisServices'
 import HomeLoading from '@/components/protrip/HomeLoading'
-import {mapActions, mapState} from "vuex";
-import Contact from "~/vuetify-package/nextkit/components/custom/contact/Contact";
+import { mapActions, mapState } from 'vuex'
+import Contact from '~/vuetify-package/nextkit/components/custom/contact/Contact'
 
 export default {
   data() {
@@ -347,8 +345,8 @@ export default {
       customer: {
         name: '',
         phone: '',
-        note: ''
-      }
+        note: '',
+      },
     }
   },
   components: {
@@ -366,17 +364,15 @@ export default {
     await this.init()
   },
   computed: {
-    ...mapState('trip', {
-      locations: state => state.locations
-    }),
+    ...mapState('trip', ['locations']),
     featuredLocations() {
       if (!this.locations) {
-        return []
+        return this.demoLocations
       }
       return this.locations.filter((e) => {
         return e.featured === true
       })
-    }
+    },
   },
   methods: {
     ...mapActions('trip', ['fetchAllLocations']),
@@ -392,8 +388,13 @@ export default {
       }
     },
     onApplyFilterSearch(filter) {
-      this.$router.push({name: 'search', query: filter})
+      this.$router.push({ name: 'search', query: filter })
+    },
+    goToFeaturedLocations(loc) {
+      this.$router.push({name: 'search', query: {
+        to: loc.city_code
+      }})
     }
-  }
+  },
 }
 </script>

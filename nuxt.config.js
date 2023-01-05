@@ -26,12 +26,17 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.META_URL,
+        content: process.env.BASE_DOMAIN,
       },
       {
         hid: 'og:description',
-        property: 'og:url',
+        property: 'og:description',
         content: process.env.META_DESCRIPTION,
+      },
+      {
+        hid: 'og:img',
+        property: 'og:img',
+        content: '/logo.png',
       },
       {
         hid: 'title',
@@ -41,12 +46,17 @@ export default {
       {
         hid: 'url',
         property: 'url',
-        content: process.env.META_URL,
+        content: process.env.BASE_DOMAIN,
       },
       {
         hid: 'description',
         property: 'url',
         content: process.env.META_DESCRIPTION,
+      },
+      {
+        hid: 'img',
+        property: 'img',
+        content: '/logo.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }],

@@ -16,9 +16,9 @@
         <Logo />
 
         <v-spacer></v-spacer>
-        <v-btn class="d-block d-md-none" text @click="toggleClass()">
-          <v-app-bar-nav-icon class="white--text" />
-        </v-btn>
+<!--        <v-btn class="d-block d-md-none" @click="toggleClass()">-->
+<!--          <v-app-bar-nav-icon class="white&#45;&#45;text" />-->
+<!--        </v-btn>-->
         <!-- Desktop view Navigation -->
         <div
           class="navigation"
@@ -34,13 +34,13 @@
             >
               <v-tab
                 v-for="(route, index) in routesBar"
-                :value="route.key"
+                :value="currentRoute"
                 :href="route.key"
                 :key="index"
               >
-                <h2 class="text-capitalize font-weight-bold" :class="customColor">{{
+                <h3 class="text-capitalize font-weight-500" :class="customColor">{{
                   $t(route.value)
-                }}</h2>
+                }}</h3>
               </v-tab>
             </v-tabs>
             <li class="nav-item">
@@ -146,7 +146,7 @@ export default {
           value: 'hotels',
         },
         {
-          key: 'tours',
+          key: 'search',
           value: 'tours',
         },
         {
@@ -154,7 +154,7 @@ export default {
           value: 'plants',
         },
       ],
-      currentRoute: '',
+      currentRoute: 'search',
       customColor: 'white--text',
     }
   },
