@@ -20,6 +20,7 @@
                     v-model="name"
                     placeholder="Name"
                     :rules="rules.name"
+                    required
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" md="6" class="py-0">
@@ -31,6 +32,7 @@
                     :label="$t('email_field')"
                     placeholder="Email"
                     :rules="rules.email"
+                    required
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" class="py-0">
@@ -41,6 +43,7 @@
                     v-model="phoneNumber"
                     :label="$t('phone_number')"
                     :placeholder="$t('phone_number')"
+                    required
                   ></v-text-field>
                 </v-col>
                 <v-col cols="12" class="py-0">
@@ -54,9 +57,7 @@
                   ></v-textarea>
                 </v-col>
               </v-row>
-              <v-btn
-                nuxt
-                to="/"
+              <v-btn                
                 class="btn-custom-md mt-12 text-capitalize"
                 color="error"
                 elevation="0"
@@ -104,8 +105,8 @@ export default {
           v => !!v || this.$t('email_required'),
         ],
         phone: [
-          v => !!v || this.$t('phone_required')
-          // v => !!v && validatePhoneNumber(v)
+          v => !!v || this.$t('phone_required'),
+          v => !!v && validatePhoneNumber(v) || this.$t('phone_incorrect')
         ],
       }
     };

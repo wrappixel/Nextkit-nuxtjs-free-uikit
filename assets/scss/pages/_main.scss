@@ -38,3 +38,10 @@
 .text--strike-through {
   text-decoration: line-through;
 }
+
+
+@each $i in $font-weight {
+  .font-weight-#{$i} {
+    font-weight: #{$i};
+  }
+}

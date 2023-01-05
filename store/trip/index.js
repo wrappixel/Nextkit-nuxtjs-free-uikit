@@ -1,8 +1,8 @@
-import actions from "~/store/trip/actions";
-import mutations from "~/store/trip/mutations";
-import getters from "~/store/trip/getters";
+import actions from "./actions";
+import mutations from "./mutations";
+import getters from "./getters";
 
-export default {
+export const state =  {
   product:{},
   products: {},
   locations:[]
