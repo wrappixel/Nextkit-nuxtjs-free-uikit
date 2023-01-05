@@ -16,9 +16,9 @@
         <Logo />
 
         <v-spacer></v-spacer>
-        <v-btn class="d-block d-md-none" text @click="toggleClass()">
-          <v-app-bar-nav-icon class="white--text" />
-        </v-btn>
+<!--        <v-btn class="d-block d-md-none" @click="toggleClass()">-->
+<!--          <v-app-bar-nav-icon class="white&#45;&#45;text" />-->
+<!--        </v-btn>-->
         <!-- Desktop view Navigation -->
         <div
           class="navigation"
