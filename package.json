@@ -17,6 +17,7 @@
     "@nuxtjs/device": "^3.0.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/i18n": "^7.3.0",
+    "@symbol-it/nuxtjs-notification-module": "^0.0.6",
     "core-js": "^3.15.1",
     "libphonenumber-js": "^1.10.15",
     "libphonenumbers": "^1.3.0",

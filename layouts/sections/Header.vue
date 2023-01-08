@@ -13,12 +13,12 @@
     >
       <v-container class="py-0 fill-height">
         <!-- Logo -->
-        <Logo />
+        <Logo/>
 
         <v-spacer></v-spacer>
-<!--        <v-btn class="d-block d-md-none" @click="toggleClass()">-->
-<!--          <v-app-bar-nav-icon class="white&#45;&#45;text" />-->
-<!--        </v-btn>-->
+        <!--        <v-btn class="d-block d-md-none" @click="toggleClass()">-->
+        <!--          <v-app-bar-nav-icon class="white&#45;&#45;text" />-->
+        <!--        </v-btn>-->
         <!-- Desktop view Navigation -->
         <div
           class="navigation"
@@ -39,18 +39,17 @@
                 :key="index"
               >
                 <h3 class="text-capitalize font-weight-500" :class="customColor">{{
-                  $t(route.value)
-                }}</h3>
+                    $t(route.value)
+                  }}</h3>
               </v-tab>
             </v-tabs>
             <li class="nav-item">
               <!-- login-regiter -->
               <v-menu
                 :close-on-content-click="false"
-                :nudge-width="200"
+                :nudge-width="100"
                 offset-y
-                :close-on-click="true"
-              >
+                :close-on-click="true">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
                     elevation="0"
@@ -60,32 +59,26 @@
                     active-class="transparent"
                     depressed
                   >
-                    <country-flag :country="language.flag" size="big" />
+                    <country-flag :country="language.flag" size="big"/>
                   </v-btn>
                 </template>
-
                 <v-list>
-                  <v-list-item>
-                    <v-row align="center">
-                      <v-col cols="12">
-                        <v-select
-                          :items="languages"
-                          :value.sync="language"
-                          single-line
-                          @change="onChangeLang"
-                          item-text="label"
-                          item-value="locale"
-                          class="language-select"
-                          outlined
-                        >
-                          <template v-slot:prepend-inner>
-                            <p class="my-0 mr-8">
-                              <country-flag :country="language.flag" size="normal" />
-                            </p>
-                          </template>
-                        </v-select>
-                      </v-col>
-                    </v-row>
+                  <v-list-item
+                    v-for="(lang, index) in languages"
+                    :key="index"
+                  >
+                    <v-list-item-title>
+                      <v-btn
+                        elevation="0"
+                        class="text-capitalize transparent"
+                        active-class="transparent"
+                        depressed
+                        @click="onChangeLang(lang.locale)"
+                      >
+                        <country-flag :country="lang.flag" size="normal" class="mr-2 mb-1"/>
+                        {{ $t(lang.label) }}
+                      </v-btn>
+                    </v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-menu>
@@ -101,7 +94,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import {mapActions} from 'vuex'
 
 export default {
   name: 'Header',
@@ -122,16 +115,22 @@ export default {
     return {
       isActive: false,
       bg: 'transparent',
+      items: [...Array(4)].map((_, i) => `Item ${i}`),
       languages: [
         {
           flag: 'vn',
           locale: 'vi',
-          label: 'Vietnamese',
+          label: 'vietnamese',
         },
         {
           flag: 'us',
           locale: 'en',
-          label: 'English',
+          label: 'english',
+        },
+        {
+          flag: 'fr',
+          locale: 'fr',
+          label: 'french',
         },
       ],
       language: {
@@ -142,16 +141,32 @@ export default {
       locale: 'vi',
       routesBar: [
         {
-          key: 'hotels',
-          value: 'hotels',
+          key: 'hotdeal',
+          value: 'hot_deal',
+        },
+        {
+          key: 'flights',
+          value: 'flights',
+        },
+        {
+          key: 'hotel',
+          value: 'hotel',
         },
         {
           key: 'search',
           value: 'tours',
         },
         {
-          key: 'plants',
-          value: 'plants',
+          key: 'cars',
+          value: 'cars',
+        },
+        {
+          key: 'visa',
+          value: 'visa',
+        },
+        {
+          key: 'playingtickets',
+          value: 'playing_tickets',
         },
       ],
       currentRoute: 'search',
