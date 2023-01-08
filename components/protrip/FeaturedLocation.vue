@@ -2,11 +2,10 @@
   <v-card class="card-shadow featured-location">
     <v-img
       class="white--text align-end"
-      height="300px"
       :src="location.img_src"
-      aspect-ratio="0.6666"      
+      aspect-ratio="1.5"
     >
-      <v-card-title class="feat-title"> {{location.city}} </v-card-title>
+      <v-card-title class="feat-title"> {{ location.city }}</v-card-title>
     </v-img>
   </v-card>
 </template>
@@ -22,7 +21,7 @@ export default {
         country_code: 'VN',
         city: 'Hà Nội',
         city_code: 'HN',
-        img_src:'https://assets.miinho.click/images/723e1b937892c26313beb976869ba2a2.jpg',
+        img_src: 'https://assets.miinho.click/images/723e1b937892c26313beb976869ba2a2.jpg',
         published: true,
         featured: true,
       },

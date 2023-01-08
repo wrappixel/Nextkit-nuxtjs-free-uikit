@@ -1545,6 +1545,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.6.0.tgz#3c7c9c46e678feefe7a2e5bb609d3dbd665ffb3f"
   integrity sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==
 
+"@symbol-it/nuxtjs-notification-module@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@symbol-it/nuxtjs-notification-module/-/nuxtjs-notification-module-0.0.6.tgz#e93040421a2689a6a59a52d199459f95785637de"
+  integrity sha512-vRyUT/9TRtm0vN3SWz0AVqCEN16h9nDPtTmi5XwgZaAAhf3jbBVBMKUAabhMtbLqYEVG50hib2W6OBZCmj7i/A==
+
 "@szmarczak/http-timer@^4.0.5":
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-4.0.6.tgz#b4a914bb62e7c272d4e5989fe4440f812ab1d807"

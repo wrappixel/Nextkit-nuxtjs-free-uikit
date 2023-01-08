@@ -11,9 +11,9 @@
             <!-- < class="banner-title font-weight-bold white--text "> -->
           <vue-typed-js :strings="[$t('where_do_you_want_to_go')]" :loop="true"
             :smartBackspace='true'
-            :typeSpeed='120'
+            :typeSpeed='80'
             :backSpeed='20'
-            :backDelay='1000'>
+            :backDelay='10000'>
             <h1 class="typing banner-title font-weight-bold white--text"></h1>
           </vue-typed-js>
 

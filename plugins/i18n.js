@@ -12,6 +12,7 @@ export default ({ app, store }) => {
     messages: {
       vi: require('~/locales/vi.json'),
       en: require('~/locales/en.json'),
+      fr: require('~/locales/fr.json'),
     },
   })
 }

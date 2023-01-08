@@ -94,7 +94,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/auth'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/dotenv', '@nuxtjs/auth', '@symbol-it/nuxtjs-notification-module'],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

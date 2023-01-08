@@ -4,7 +4,7 @@
       <v-img
         :src="require('@/assets/images/logos/logo.png')"
         alt="logo"
-        width="150"
+        width="250"
         height="100"
         contain
       />

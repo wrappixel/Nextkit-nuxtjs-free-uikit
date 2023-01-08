@@ -53,5 +53,15 @@
   "tours": "tours",
   "where_do_you_want_to_go": "Bạn muốn đi đâu?",
   "phone_incorrect":"Nhập đúng định dạng số điện thoại",
-  "coming_soon_description": "Chúng tôi đang phát triển trang này. Cảm ơn bạn đã sử dụng sản phầm. Chúng tôi sẽ ra mắt trong thời gian gần nhất"
+  "coming_soon_description": "Chúng tôi đang phát triển trang này. Cảm ơn bạn đã sử dụng sản phầm. Chúng tôi sẽ ra mắt trong thời gian gần nhất",
+  "hot_deal": "Hot Deal",
+  "flights": "Vé máy bay",
+  "cars": "Xe du lịch",
+  "visa": "visa",
+  "playing_tickets": "Vé vui chơi",
+  "english": "Tiếng Anh",
+  "vietnamese": "Tiếng Việt",
+  "french": "Tiếng Pháp",
+  "address": "Địa chỉ",
+  "contact_success": "Thành công! Chúng tôi sẽ liên lạc với bạn sớm nhất có thể!"
 }

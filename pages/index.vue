@@ -129,7 +129,7 @@
           <v-row justify="center" class="feature2-spacer">
             <template v-for="(loc, index) in featuredLocations">
               <v-col cols="6" md="6" lg="3" :key="index" @click="goToFeaturedLocations(loc)">
-                <featured-location :location="loc"></featured-location>
+                  <featured-location :location="loc" class="cursor-pointer"></featured-location>
               </v-col>
             </template>
           </v-row>

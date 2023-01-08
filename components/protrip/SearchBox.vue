@@ -21,7 +21,7 @@
               class="pt-0 f-3"
             >
             </v-autocomplete>
-            <i class="mt-4 mdi mdi-map-marker-outline f-1 icon-bold" />
+            <i class="mt-4 mdi mdi-map-marker-outline f-1 icon-bold"/>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
               class="pt-0 f-3"
             >
             </v-autocomplete>
-            <i class="mt-4 mdi mdi-map-marker-outline f-1 icon-bold" />
+            <i class="mt-4 mdi mdi-map-marker-outline f-1 icon-bold"/>
           </div>
         </div>
       </div>
@@ -65,14 +65,14 @@
         dark
         @click="onSearchTours"
       >
-        <v-icon :large="true"> mdi-magnify </v-icon>
+        <v-icon :large="true"> mdi-magnify</v-icon>
       </v-btn>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import {mapActions, mapState} from "vuex";
 
 export default {
   name: "SearchBox",
@@ -95,8 +95,7 @@ export default {
       default: true,
     },
   },
-  computed: {
-  },
+  computed: {},
   mounted() {
     this.init();
   },
@@ -125,10 +124,15 @@ export default {
       this.$emit("onApplyFilter", {...this.filters, ...payload});
     },
     customFilter(item, queryText, itemText) {
-      const textOne = item.city.toLowerCase();
+      const city = item.city.toLowerCase();
+      const code = item.city_code.toLocaleLowerCase();
+      const city_eng = item.city_eng.toLowerCase();
       const searchText = queryText.toLowerCase();
 
-      return textOne.indexOf(searchText) > -1;
+      return city.indexOf(searchText) > -1 || 
+        code.indexOf(searchText) > -1 ||
+        city_eng.indexOf(searchText) > -1 ||
+        city.indexOf(searchText) > -1;
     },
     onSearchTours() {
       this.fetchTour();

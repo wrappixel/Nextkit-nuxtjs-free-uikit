@@ -57,11 +57,13 @@
                   ></v-textarea>
                 </v-col>
               </v-row>
-              <v-btn                
+              <v-btn
                 class="btn-custom-md mt-12 text-capitalize"
                 color="error"
                 elevation="0"
                 :disabled="!valid"
+                :loading="submitting"
+                @click="submit"
               >
                 {{$t('submit')}}
               </v-btn>
@@ -77,6 +79,7 @@
 </template>
 <script>
 import {validatePhoneNumber} from "~/core/utils/phone";
+import bookingService from "@/services/apis/bookingService";
 
 export default {
   name: "Contact",
@@ -89,6 +92,10 @@ export default {
       type: Boolean,
       default: false
     },
+    tripId: {
+      type: Number,
+      default: 0,
+    }
   },
   data() {
     return {
@@ -103,14 +110,36 @@ export default {
         ],
         email: [
           v => !!v || this.$t('email_required'),
+          v => {
+            const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            return pattern.test(v) || this.$t('email_invalid')
+          }
         ],
         phone: [
           v => !!v || this.$t('phone_required'),
           v => !!v && validatePhoneNumber(v) || this.$t('phone_incorrect')
         ],
-      }
+      },
+      submitting: false,
     };
   },
-  methods: {},
+  methods: {
+    async submit() {
+      this.submitting = true;
+      const res = await bookingService.createBooking({
+        trip_id: this.tripId,
+        customer: {
+          phone: this.phoneNumber,
+          full_name: this.name,
+          email: this.email,
+        },
+        message: this.notes
+      })
+      if (res && res.success) {
+        this.$notification.addSuccess(this.$t('contact_success'))
+      }
+      this.submitting = false;
+    }
+  },
 };
 </script>
