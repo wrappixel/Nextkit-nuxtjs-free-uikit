@@ -1,9 +1,5 @@
 .team-card {
-  .team-title {
-    margin: 30px 0 0;
-  }
   .team-subtitle {
-    margin: 0 0 20px;
     font-size: 13px;
   }
   .social-overlay {
@@ -14,7 +10,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      bottom: 0;
+      bottom: 6px;
       left: 0;
       padding: 1.25rem;
       border-radius: calc(0.25rem - 1px);
@@ -27,7 +23,7 @@
         padding-left: 0;
         li {
           a {
-            color: $white;
+            color: rgb(var(--v-theme-white));
             transition: 0.2s ease-in;
             padding: 0 10px;
             display: block;

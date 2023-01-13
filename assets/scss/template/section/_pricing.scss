@@ -2,7 +2,7 @@
   .price-text {
     font-size: 48px;
     line-height: 72px;
-    color: $dark;
+    color: rgb(var(--v-theme-dark));
   }
   sup {
     top: -20px;

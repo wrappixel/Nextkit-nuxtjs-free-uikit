@@ -1,0 +1,17 @@
+.v-application .v-sheet.v-card:not(.v-sheet--outlined) {
+  box-shadow: $shadow;
+}
+
+.v-sheet.v-card.border-success-all {
+  border: 1px solid rgb(var(--v-theme-success)) !important;
+}
+
+.card-shadow {
+  box-shadow: 0 0 30px rgb(115 128 157 / 10%) !important;
+}
+
+.v-card-actions{
+  .v-btn{
+    padding:$btn-gap;
+  }
+}

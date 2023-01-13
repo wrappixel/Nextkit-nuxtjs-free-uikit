@@ -1,33 +1,17 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import MainBanner from '@/components/shared/lp-banner/BannerTwo.vue';
+import UiComponents from '@/components/ui-components/AllComponents.vue';
+import CommingSoon from '@/components/shared/coming-soon/ComingSoon.vue';
+</script>
+
 <template>
   <div>
-    <BannerTwo />
-    <AllComponents />
-    <ComingSoon />
+    <!-------Banner-------->
+    <MainBanner />
+    <!-------UI Components-------->
+    <UiComponents />
+    <!----Commingsoon ----->
+    <CommingSoon/>
   </div>
 </template>
-
-<script>
-export default {
-  head() {
-    return {
-      title: "Basic Components",
-      meta: [
-        {
-          hid: "description",
-          name: "Next Ui Kit",
-          content: "Next Ui Kit is the best way",
-        },
-      ],
-    };
-  },
-
-  data() {
-    return {};
-  },
-  components: {
-    BannerTwo: () => import("@/components/shared/lp-banner/BannerTwo"),
-    ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
-    AllComponents: () => import("@/components/basic/AllComponents"),
-  },
-};
-</script>

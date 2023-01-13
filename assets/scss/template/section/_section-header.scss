@@ -5,12 +5,12 @@
         color: #8d97ad;
         opacity: 1;
         &.nuxt-link-exact-active {
-          color: $primary;
+          color: rgb(var(--v-theme-primary));
         }
       }
       &:hover {
         .nav-link {
-          color: $primary;
+          color: rgb(var(--v-theme-primary));
         }
       }
     }
@@ -40,12 +40,12 @@
       z-index: 1;
     }
     .navbar-nav {
-      background-color: $light;
+      background-color: rgb(var(--v-theme-light));
     }
   }
   .header2 {
     .navbar-nav {
-      background-color: $dark;
+      background-color: rgb(var(--v-theme-dark));
     }
   }
 }

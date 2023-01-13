@@ -1,0 +1,27 @@
+.theme--light.v-footer {
+  background: white;
+}
+
+.social-icons {
+  a {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0 5px;
+    transition: 0.2s ease-in;
+    color: $dark;
+    background: $light;
+    &:hover {
+      transform: translate3d(0px, -5px, 0px);
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.footer {
+  padding: 45px 0;
+}

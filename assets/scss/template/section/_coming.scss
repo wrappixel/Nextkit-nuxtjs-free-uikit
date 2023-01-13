@@ -1,11 +1,14 @@
 .coming-wrapper {
-  background: url("~assets/images/landingpage/comingsoon.jpg");
+  background: url("/images/landingpage/comingsoon.jpg");
   min-height: 400px;
   overflow: auto;
   background-size: cover;
   background-position: top 20% center;
   display: flex;
   align-items: center;
+  .v-btn__overlay{
+    background-color: transparent !important;
+  }
 }
 
 .coming-title {

@@ -1,0 +1,236 @@
+.theme--light.v-application,
+.theme--light.v-sheet,
+.theme--light.v-card > .v-card__text,
+.theme--light.v-card .v-card__subtitle {
+  color:var(--v-theme-muted) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: $heading-color;
+}
+
+.border-right {
+  border-right: 1px solid $border-color;
+}
+
+.border-left {
+  border-left: 1px solid $border-color;
+}
+
+.border-top {
+  border-top: 1px solid $border-color;
+}
+
+.border-top-0 {
+  border-top: 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.theme--light.border-all,
+.border-all {
+  border: 1px solid $border-color !important;
+}
+
+.mw-unset {
+  min-width: unset !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.no-cursor {
+  cursor: initial;
+}
+
+.no-effect-button {
+  &:hover {
+    color: rgb(var(--v-theme-blue));
+    &::before {
+      background-color: transparent;
+    }
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-control {
+  border: 1px solid $border-color;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 40px;
+  height: 40px;
+  &:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .pt-sm-0 {
+    padding-top: 0 !important;
+  }
+  .py-sm-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .v-application .text-h2 {
+    font-size: 25px !important;
+  }
+  .px-xs-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .custom-label {
+    .v-input__slot {
+      align-items: flex-start;
+    }
+
+    .v-label {
+      min-height: 58px;
+      white-space: pre-line !important;
+    }
+  }
+  .inner-top-spacer {
+    padding-top: 30px;
+  }
+}
+
+.v-main {
+  padding: 0 !important;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.dark-link {
+  text-decoration: none;
+  color: $heading-color !important;
+  &:hover {
+    color: rgb(var(--v-theme-primary))!important;
+  }
+}
+.mini-spacer {
+  padding: 75px 0;
+}
+
+@media (max-width: 767px) {
+  .mini-spacer {
+    padding: 45px 0;
+  }
+}
+
+.v-pagination {
+  justify-content: flex-start;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.bg-dark,
+.app-header.v-sheet.bg-dark {
+  background-color: #263238 !important;
+}
+
+.bg-extra-light {
+  background-color: #f4f8fa;
+}
+
+.bg-light-info {
+  background-color: #cfecfe;
+}
+
+.grey--text {
+  color: rgb(var(--v-theme-gray-500)) !important;
+}
+
+.op-8 {
+  opacity: 0.8;
+}
+
+.text-themecolor {
+  color: rgb(var(--v-theme-accent))!important;
+}
+
+.bg-info-grediant {
+  background: rgb(var(--v-theme-primary));
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    rgb(var(--v-theme-primary)),
+    rgb(var(--v-theme-accent))
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(var(--v-theme-primary))),
+    to(rgb(var(--v-theme-accent)))
+  );
+  background: -webkit-linear-gradient(left, rgb(var(--v-theme-primary)), rgb(var(--v-theme-accent)));
+  background: linear-gradient(90deg, rgb(var(--v-theme-primary))0, rgb(var(--v-theme-accent)));
+}
+
+.bg-danger-grediant {
+  background: rgb(var(--v-theme-error));
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    rgb(var(--v-theme-error)),
+    rgb(var(--v-theme-orange))
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(var(--v-theme-error))),
+    to(rgb(var(--v-theme-orange)))
+  );
+  background: -webkit-linear-gradient(left, rgb(var(--v-theme-error)), rgb(var(--v-theme-orange)));
+  background: linear-gradient(90deg, rgb(var(--v-theme-error)) 0, rgb(var(--v-theme-orange)));
+}
+.c2a-title {
+  font-size: 26px;
+} 
+@media (min-width: 1600px){
+  .v-container {
+      max-width: 1170px;
+  }
+}
+@media (max-width: 1024px){
+  .v-container {
+      max-width: 100%;
+      padding: 0 30px;
+  }
+}
+@media (max-width: 576px){
+  .v-container {
+      max-width: 100%;
+      padding: 0 15px;
+  }
+  .btn-100{
+    width: 100%;
+  }
+}

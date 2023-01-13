@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-wrapper" style="background-color:#439691">
+  <div class="banner-wrapper bg-green">
     <v-container>
       <!-- -----------------------------------------------
             Start Banner
@@ -13,33 +13,23 @@
           class="d-flex align-center justify-center"
         >
           <div class="text-center">
-            <h1 class="banner-title font-weight-bold white--text">
+            <h1 class="banner-title font-weight-bold text-white">
               NuxtJs UI Kit Free
             </h1>
-            <h4 class="banner-subtitle mr-0 white--text font-weight-regular">
+            <h4 class="banner-subtitle mr-0 text-white font-weight-regular">
               Built with Nuxt Js and based on Vuetify js Free UI Kit
             </h4>
-            <div class="mt-16 pt-2">
-              <v-btn nuxt large to="/coming-soon" color="success" elevation="0">
+            <div class="mt-8">
+              <v-btn to="/coming-soon" size="large" class="bg-success text-white" flat>
                 Upgrade to Pro
               </v-btn>
             </div>
           </div>
         </v-col>
       </v-row>
-
       <!-- -----------------------------------------------
             End Banner
         ----------------------------------------------- -->
     </v-container>
   </div>
 </template>
-<script>
-export default {
-  name: "BannerTwo",
-  data() {
-    return {};
-  },
-  methods: {}
-};
-</script>

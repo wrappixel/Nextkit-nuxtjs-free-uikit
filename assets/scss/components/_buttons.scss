@@ -1,0 +1,126 @@
+.v-btn--contained {
+  box-shadow: none;
+}
+.v-btn{
+  text-transform: none;
+  letter-spacing: 0;
+  border-radius:$btn-border-radius;
+  padding:$btn-gap;
+  height: auto !important;
+  font-family: "DM Sans", sans-serif;
+  line-height: inherit;
+  font-weight:$btn-font-weight;
+  font-size:$btn-font-sizes ;
+}
+.theme--light.v-btn--active::before {
+  opacity: 0.18;
+}
+
+.custom-lg-btn {
+  &.v-btn:not(.v-btn--round).v-size--x-large {
+    padding: 0;
+    min-width: 95px;
+  }
+  &.v-btn--fab.v-size--x-large {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+.btn-custom-nm {
+  padding: 0 25px !important;
+}
+
+.btn-custom-md {
+  padding: 15px 35px !important;
+}
+
+.btn-custom-lg {
+  padding: 15px 45px !important;
+}
+
+//
+// Linear Gredient Buttons
+//
+
+.btn-danger-gradient {
+  background: rgb(var(--v-theme-error));
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    rgb(var(--v-theme-error)),
+    rgb(var(--v-theme-orange))
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(var(--v-theme-error))),
+    to(rgb(var(--v-theme-orange)))
+  );
+  background: -webkit-linear-gradient(left, rgb(var(--v-theme-error)), rgb(var(--v-theme-orange)));
+  background: linear-gradient(90deg, rgb(var(--v-theme-error)) 0, rgb(var(--v-theme-orange)));
+  border: 0px;
+
+  &:hover {
+    background: rgb(var(--v-theme-orange));
+    background: -webkit-linear-gradient(
+      legacy-direction(to right),
+      rgb(var(--v-theme-orange)),
+      rgb(var(--v-theme-error))
+    );
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgb(var(--v-theme-orange))),
+      to(rgb(var(--v-theme-error)))
+    );
+    background: -webkit-linear-gradient(left, rgb(var(--v-theme-orange)), rgb(var(--v-theme-error)));
+    background: linear-gradient(90deg, rgb(var(--v-theme-orange)) 0, rgb(var(--v-theme-error)));
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    box-shadow: 0px;
+    opacity: 1;
+  }
+}
+
+.v-badge__badge .v-icon {
+  font-size: 12px !important;
+}
+
+.btn-arrow {
+  position: relative;
+
+  span {
+    display: inline-block;
+    position: relative;
+    transition: all 300ms ease-out;
+    will-change: transform;
+  }
+
+  &:hover span,
+  &:focus span {
+    transform: translate3d(-0.5rem, 0, 0);
+  }
+
+  i {
+    position: absolute;
+    width: 1.1em;
+    right: 0px;
+    right: 0rem;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 300ms ease-out;
+    will-change: right, opacity;
+  }
+
+  &:hover i,
+  &:focus i {
+    opacity: 1;
+    right: -2rem;
+  }
+}

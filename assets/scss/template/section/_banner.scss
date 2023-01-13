@@ -13,7 +13,7 @@
 }
 
 .banner-wrapper {
-  background: $accent;
+  background: rgb(var(--v-theme-accent));
   padding: 20px 0 20px;
   min-height: 600px;
   display: flex;
@@ -97,21 +97,20 @@
 .stylish-input-group {
   display: flex;
   align-items: center;
+  .v-field__input{
+    padding-bottom: 0;
+  }
   .v-text-field__details {
     display: none;
   }
-  .v-input__slot {
+  .v-input--density-default .v-field--variant-solo {
     margin-bottom: 0;
     border-radius: 36px 0 0 36px !important;
     text-indent: 35px;
     font-weight: 300;
     text-overflow: ellipsis;
     min-height: 72px;
-    padding-left: 32px !important;
-  }
-  .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
-    > .v-input__control
-    > .v-input__slot {
+    padding-left: 15px !important;
     box-shadow: -5px 0 30px 0 rgb(0 0 0 / 5%);
   }
   .v-btn {

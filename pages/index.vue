@@ -1,52 +1,17 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import MainBanner from '@/components/section/banner/MainBanner.vue';
+import CommingSoon from '@/components/shared/coming-soon/ComingSoon.vue';
+import AllCustomComponents from '@/components/section/AllCustomComponents.vue';
+</script>
+
 <template>
   <div>
-    <!-- -----------------------------------------------
-    Banner
-    ----------------------------------------------- -->
-    <Banner />
-    <!-- -----------------------------------------------
-    ./ Banner
-    ----------------------------------------------- -->
-    <!-- -----------------------------------------------
-    All Components
-    ----------------------------------------------- -->
-    <AllCustomComponents />
-    <!-- -----------------------------------------------
-    ./ All Components
-    ----------------------------------------------- -->
-    <!-- -----------------------------------------------
-    Coming Soon
-    ----------------------------------------------- -->
-    <ComingSoon />
-    <!-- -----------------------------------------------
-    ./ Coming Soon
-    ----------------------------------------------- -->
+    <!-------Banner-------->
+    <MainBanner />
+    <!-------All Components-------->
+    <AllCustomComponents/>
+    <!----Commingsoon ----->
+    <CommingSoon/>
   </div>
 </template>
-
-<script>
-export default {
-  head() {
-    return {
-      title: "NuxtJs UI kit | Free UI kit built with Vuetify",
-      meta: [
-        {
-          hid: "description",
-          name: "Next Ui Kit",
-          content: "Next Ui Kit is the best way",
-        },
-      ],
-    };
-  },
-
-  data() {
-    return {};
-  },
-  components: {
-    Banner: () => import("@/components/shared/lp-banner/Banner"),
-    ComingSoon: () => import("@/components/shared/coming-soon/ComingSoon"),
-    AllCustomComponents: () =>
-      import("@/components/custom/AllCustomComponents"),
-  },
-};
-</script>

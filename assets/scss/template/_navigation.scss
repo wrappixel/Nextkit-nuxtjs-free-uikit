@@ -1,5 +1,4 @@
 .v-application .navbar-nav {
-  display: flex;
   flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
@@ -7,10 +6,8 @@
   .nav-item {
     transition: 0.2s ease-in;
     position: relative;
-
     .nav-link {
       text-decoration: none;
-      line-height: $nav-link-height;
       padding: $nav-link-padding;
       font-size: $nav-link-font-size;
       color: $nav-link-font-color;
@@ -20,24 +17,20 @@
     }
     &:hover,
     &.active {
-      > .nav-link {
+      > .nav-link { 
         opacity: 1;
       }
     }
-    > .nav-link.nuxt-link-exact-active {
+    > .router-link-exact-active {
       opacity: 1;
     }
   }
 }
-.app-header .v-toolbar__content {
-  padding: 0px 16px;
-}
-
 .v-application .link {
   text-decoration: none;
   color: $material-font-light-theme;
   &:hover {
-    color: $primary;
+    color: rgb(var(--v-theme-primary));
   }
 }
 .mob-navigation {
@@ -53,8 +46,8 @@
 
 .btn-download {
   margin: 10px 0 10px 10px;
-  background-color: $light !important;
-  border-color: $light !important;
+  background-color: rgb(var(--v-theme-light)) !important;
+  border-color: rgb(var(--v-theme-light)) !important;
   &.v-btn--active::before {
     opacity: 0;
   }

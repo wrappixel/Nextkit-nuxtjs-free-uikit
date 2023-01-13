@@ -1,13 +1,17 @@
 // ================================== //
+// Fonts
+// ================================== //
+
+// ================================== //
 // Required Files
 // ================================== //
-@import "~vuetify/src/styles/styles.sass";
-@import "custom-variable";
+@import "variables";
+@import 'vuetify/styles/main.sass';
 
 // ================================== //
 // Vuetify overrides
 // ================================== //
-@import "vuetify/overrides";
+@import "components/overrides";
 
 // ================================== //
 // Template Common Components
@@ -28,9 +32,7 @@
 @import "template/section/portfolio";
 @import "template/section/pricing";
 @import "template/section/team";
-@import "template/section/testimonial";
 @import "template/section/blog";
-@import "template/section/c2a";
 @import "template/section/contact";
 
 // ================================== //

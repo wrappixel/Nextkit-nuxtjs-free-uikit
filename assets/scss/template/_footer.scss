@@ -1,7 +1,3 @@
-.theme--light.v-footer {
-  background: white;
-}
-
 .social-icons {
   a {
     width: 34px;
@@ -12,16 +8,12 @@
     border-radius: 100%;
     margin: 0 5px;
     transition: 0.2s ease-in;
-    color: $dark;
-    background: $light;
+    color: rgb(var(--v-theme-primary));
+    background: rgb(var(--v-theme-light));
     &:hover {
       transform: translate3d(0px, -5px, 0px);
-      background: $blue;
-      color: $white;
+      background: rgb(var(--v-theme-blue));
+      color: rgb(var(--v-theme-white));
     }
   }
-}
-
-.footer {
-  padding: 45px 0;
 }

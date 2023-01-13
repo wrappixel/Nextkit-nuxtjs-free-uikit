@@ -19,10 +19,10 @@
     }
   }
   .blog-title {
-    color: $dark !important;
+    color: rgb(var(--v-theme-dark)) !important;
     line-height: 22px;
     &:hover {
-      color: $accent !important;
+      color: rgb(var(--v-theme-accent))!important;
     }
   }
 }

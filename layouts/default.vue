@@ -1,34 +1,21 @@
-<template>
-  <v-app dark>
-    <!--v-if="$route.name!=='login'"-->
-    <Header />
-    <v-main>
-      <nuxt />
-    </v-main>
-    <Footer />
-  </v-app>
-</template>
-
-<script>
-export default {
-  head() {
-    return {
-      title: "NuxtJs UI kit | Free UI kit built with Vuetify",
-      meta: [
-        {
-          hid: "description",
-          name: "NuxtJs UI kit",
-          content: "NuxtJs UI kit is the best way"
-        }
-      ]
-    };
+<script setup lang="ts">
+const title = ref("Next-kit - Nuxt3 Typescript Free UI kit built with Vuetify3");
+useHead({
+  meta: [{ content: title }],
+  titleTemplate: (titleChunk) => {
+    return titleChunk
+      ? `${titleChunk} - Nuxt3 Typescript Free UI kit built with Vuetify3`
+      : "Next-kit - Nuxt3 Typescript Free UI kit built with Vuetify3";
   },
-  components: {
-    Header: () => import("@/layouts/sections/Header"),
-    Footer: () => import("@/layouts/sections/Footer")
-  },
-  methods: {}
-};
+});
 </script>
 
-<style></style>
+<template>
+  <v-app dark>
+    <LcHeader/>
+    <v-main>
+      <slot />  
+    </v-main>
+    <LcFooter/>
+  </v-app>
+</template>

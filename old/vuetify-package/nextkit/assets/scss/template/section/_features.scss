@@ -1,0 +1,93 @@
+//
+// Feature 1
+//
+.feature1-component {
+  .icon-round {
+    font-size: 45px;
+    width: 80px;
+    color: $accent;
+    line-height: 80px;
+    text-align: center;
+    display: inline-block;
+    margin: 20px 0 30px;
+    border-radius: 100%;
+  }
+}
+
+.linking {
+  i {
+    margin-left: 10px;
+    transition: 0.2s ease-in;
+    font-size: 16px;
+  }
+  &:hover {
+    i {
+      margin-left: 15px;
+    }
+  }
+}
+
+.section-title {
+  font-size: 30px;
+  margin: 20px 0 15px;
+  line-height: 36px;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 23px;
+  }
+}
+
+//
+// Feature 2
+//
+.feature2-action-btn {
+  border-radius: 0 0.25rem 0.25rem 0;
+  height: 100% !important;
+}
+
+@media (max-width: 767px) {
+  .feature2-action-btn {
+    border-radius: 0 0 0.25rem 0.25rem;
+    height: 50px !important;
+  }
+}
+
+.feature2-spacer {
+  margin-top: 60px !important;
+}
+
+//
+// Feature 3
+//
+
+.feature3-component {
+  position: relative;
+}
+
+.feature3-card {
+  position: absolute;
+  top: 17%;
+  right: 0;
+  .feature3-title {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 20px 0 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .feature3-card {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature3-card {
+    position: relative;
+  }
+}

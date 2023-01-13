@@ -5,7 +5,7 @@
   .icon-round {
     font-size: 45px;
     width: 80px;
-    color: $accent;
+    color: rgb(var(--v-theme-accent));
     line-height: 80px;
     text-align: center;
     display: inline-block;
@@ -43,13 +43,11 @@
 // Feature 2
 //
 .feature2-action-btn {
-  border-radius: 0 0.25rem 0.25rem 0;
   height: 100% !important;
 }
 
 @media (max-width: 767px) {
   .feature2-action-btn {
-    border-radius: 0 0 0.25rem 0.25rem;
     height: 50px !important;
   }
 }
@@ -82,7 +80,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: 50%;
+    top: 45%;
   }
 }
 

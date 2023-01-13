@@ -1,27 +1,25 @@
 <template>
-  <div class="coming-wrapper" ref="coming-soon">
+  <div class="coming-wrapper">
     <v-container>
       <!-- -----------------------------------------------
             Start Coming Soon
         ----------------------------------------------- -->
       <v-row>
-        <v-col cols="12" sm="10" md="6" class="d-flex align-center">
+        <v-col cols="12" sm="6" md="6" class="d-flex align-center">
           <div>
-            <h2 class="coming-title font-weight-bold white--text">
+            <h2 class="coming-title font-weight-bold text-white">
               Pro Version coming soon
             </h2>
-            <h4 class="coming-subtitle white--text font-weight-light">
+            <h4 class="coming-subtitle text-white font-weight-light">
               We will add Pro Version with tons of great features and multiple
               category demos which is ready to use...
             </h4>
-            <div class="mt-16 pt-2">
+            <div class="mt-8">
               <v-btn
-                nuxt
-                large
-                to="/#"
-                class="btn-custom-md"
-                color="white"
-                elevation="0"
+                  class="btn bg-white btn-custom-md"
+                  to="/"
+                  flat
+                  size="large"
               >
                 Coming Soon
               </v-btn>
@@ -36,12 +34,3 @@
     </v-container>
   </div>
 </template>
-<script>
-export default {
-  name: "ComingSoon",
-  data() {
-    return {};
-  },
-  methods: {}
-};
-</script>
