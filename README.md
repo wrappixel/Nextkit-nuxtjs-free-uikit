@@ -1,6 +1,6 @@
 <!-- Heading of Template -->
 <h1>
-  <a href="https://nextkit-nuxtjs-free-uikit.vercel.app/">Next Kit - Nuxt js based Free UI Kit</a>
+  <a href="https://nextkit-nuxtjs-free-uikit.vercel.app/">Next Kit - Nuxt 3 + Vuetify 3 based Free UI Kit</a>
 </h1>
 
 <!-- Main image of Template -->
@@ -8,7 +8,7 @@
   <img src="https://www.wrappixel.com/wp-content/uploads/edd/2021/09/nuxtjs-free-ui-kit.jpg" />
 </a>
 
-Next Kit Vuejs is Free NuxtJs Vuetify Website Template. It allows you to create stunning websites, landing pages, coming soon pages, homepages and more. It comes with ready to use UI Blocks & Elements to help level up the design and aesthetics of your project. Next Kit is built on Vuetify framework, which is a responsive Vuejs Framework.
+Next Kit Vuejs is Free NuxtJs 3  Vuetify 3 Website Template. It allows you to create stunning websites, landing pages, coming soon pages, homepages and more. It comes with ready to use UI Blocks & Elements to help level up the design and aesthetics of your project. Next Kit is built on Vuetify framework, which is a responsive Vuejs Framework.
 
 ## What do I get bundled with Free Version?
 
