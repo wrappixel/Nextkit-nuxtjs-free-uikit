@@ -5,11 +5,11 @@
     no-gutters
     style="padding: 8px 36px !important"
   >
-    <v-col cols="6" md="3" lg="3">
+    <v-col cols="12" md="3" lg="3">
       <div class="flex flex-row flex-space-between">
-        <div>
+        <div class="search-location w-100">
           <h3 class="search-title">{{ $t("from") }}</h3>
-          <div class="flex flex-row">
+          <div class="flex flex-row search-location__select">
             <v-autocomplete
               :items="locations"
               :placeholder="$t('from_placeholder')"
@@ -26,16 +26,16 @@
         </div>
       </div>
     </v-col>
-    <v-col cols="6" md="2" lg="2">
-      <div class="flex flex-center wall-container">
+    <v-col cols="12" md="2" lg="2">
+      <div class="flex flex-center wall-container wall-container-mobile">
         <div class="wall"></div>
       </div>
     </v-col>
-    <v-col cols="6" md="3" lg="3">
+    <v-col cols="12" md="3" lg="3">
       <div class="flex flex-row flex-space-between">
-        <div>
+        <div class="search-location w-100">
           <h3 class="search-title">{{ $t("to") }}</h3>
-          <div class="flex flex-row">
+          <div class="flex flex-row search-location__select">
             <v-autocomplete
               :items="locations"
               :placeholder="$t('to_placeholder')"
@@ -52,16 +52,16 @@
         </div>
       </div>
     </v-col>
-    <v-col cols="6" md="2" lg="2">
-      <div class="flex flex-center wall-container">
+    <v-col cols="12" md="2" lg="2">
+      <div class="flex flex-center wall-container wall-container-mobile">
         <div class="wall"></div>
       </div>
     </v-col>
-    <v-col cols="6" md="1" lg="1" justify="center" class="search-btn">
+    <v-col cols="12" md="1" lg="1" justify="center" class="search-btn">
       <v-btn
         large
         color="black"
-        class="search-btn"
+        class="search-btn col-12"
         dark
         @click="onSearchTours"
       >
@@ -129,7 +129,7 @@ export default {
       const city_eng = item.city_eng.toLowerCase();
       const searchText = queryText.toLowerCase();
 
-      return city.indexOf(searchText) > -1 || 
+      return city.indexOf(searchText) > -1 ||
         code.indexOf(searchText) > -1 ||
         city_eng.indexOf(searchText) > -1 ||
         city.indexOf(searchText) > -1;

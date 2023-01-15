@@ -1,6 +1,6 @@
 <template>
   <div class="banner-wrapper protrip-banner">
-    <img class="img-bg" :lazy-src="img" max-height="150" max-width="250" :src="img"> </img>
+<!--    <img class="img-bg" :lazy-src="img" max-height="150" max-width="250" :src="img"> </img>-->
     <v-container>
       <!-- -----------------------------------------------
             Start Banner

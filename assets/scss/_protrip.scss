@@ -16,16 +16,22 @@
 }
 
 .protrip-banner {
-  img {
-    width: auto;
-    min-width: 100%;
-    position: absolute;
-    height: 700px;
-  }
+  background: url("assets/images/landingpage/travel-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   .banner-text {
     z-index: 1;
   }
   .banner-title {
+  }
+  height: 1000px;
+}
+
+@media (max-width: 767px) {
+  .protrip-banner {
+    height: 800px;
   }
 }
 
@@ -68,23 +74,29 @@
     font-size: 14px;
   }
 
-  .search-btn btn {
+  .search-btn {
     width: 100%;
+    min-width: 90px;
   }
   .v-btn:not(.v-btn--round).v-size--large {
-    min-width: 0px;
+    //min-width: 0px;
   }
 
   @media (min-width: 1000px) {
     .search-btn {
-      margin-left: 12px;
+      //margin-left: 12px;
     }
   }
 
   @media (max-width: 767px) {
-    .wall-container {
+    .wall-container-mobile {
       display: none;
       width: 10px;
+    }
+
+    .search-location {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
@@ -127,3 +139,20 @@
   }
   color: white;
 }
+
+.image-hover {
+  .v-image {
+    &__image {
+      transition: all .5s;
+    }
+  }
+  &:hover {
+    .v-image {
+      &__image {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+}
+

@@ -1,7 +1,7 @@
 <template>
   <v-card class="card-shadow featured-location">
     <v-img
-      class="white--text align-end"
+      class="white--text align-end image-hover"
       :src="location.img_src"
       aspect-ratio="1.5"
     >
